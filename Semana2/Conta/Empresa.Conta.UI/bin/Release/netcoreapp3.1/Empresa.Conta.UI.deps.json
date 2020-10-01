@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Empresa.Conta.UI/1.0.0": {
+        "dependencies": {
+          "Empresa.Conta.Data": "1.0.0"
+        },
+        "runtime": {
+          "Empresa.Conta.UI.dll": {}
+        }
+      },
+      "Empresa.Conta.Data/1.0.0": {
+        "dependencies": {
+          "Empresa.Conta.Model": "1.0.0"
+        },
+        "runtime": {
+          "Empresa.Conta.Data.dll": {}
+        }
+      },
+      "Empresa.Conta.Model/1.0.0": {
+        "runtime": {
+          "Empresa.Conta.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Empresa.Conta.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Empresa.Conta.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Empresa.Conta.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

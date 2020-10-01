@@ -1,0 +1,13 @@
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.exe
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.deps.json
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.runtimeconfig.json
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.runtimeconfig.dev.json
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.dll
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\bin\Debug\netcoreapp3.1\semana1.pdb
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.csprojAssemblyReference.cache
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.AssemblyInfoInputs.cache
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.AssemblyInfo.cs
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.csproj.CoreCompileInputs.cache
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.dll
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.pdb
+C:\cenfotec\WebApplicationDevASPNetCore\semana1\obj\Debug\netcoreapp3.1\semana1.genruntimeconfig.cache
