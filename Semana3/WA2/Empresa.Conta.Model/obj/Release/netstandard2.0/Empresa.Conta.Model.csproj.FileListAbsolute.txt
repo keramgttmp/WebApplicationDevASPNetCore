@@ -1,0 +1,9 @@
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\bin\Release\netstandard2.0\Empresa.Conta.Model.deps.json
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\bin\Release\netstandard2.0\Empresa.Conta.Model.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\bin\Release\netstandard2.0\Empresa.Conta.Model.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.csprojAssemblyReference.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.AssemblyInfoInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.AssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.csproj.CoreCompileInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana2\Conta\Empresa.Conta.Model\obj\Release\netstandard2.0\Empresa.Conta.Model.pdb

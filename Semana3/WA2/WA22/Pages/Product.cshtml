@@ -1,0 +1,35 @@
+﻿@page
+@model WA22.Pages.ProductModel
+@{
+}
+
+<h1>Products</h1>
+<p>Con ForEach</p>
+<ul>
+    @foreach (var i in Enumerable.Range(1, 10))
+    {
+        <li>@i</li>
+    }
+
+</ul>
+
+<p>Con propiedad de la clase Product</p>
+<ul>
+    @foreach (var i in Model.Nums)
+    {
+        <li>@i</li>
+    }
+</ul>
+
+<p>Con referencia del proyecto Empresa.Conta</p>
+
+<table>
+    <tbody>
+        @foreach (var lista in Model.Products)
+        {
+            <tr>
+                <td>@lista.Id</td><td>@lista.Nombre</td><td>@lista.Precio</td>
+            </tr>
+        }
+    </tbody>
+</table>
