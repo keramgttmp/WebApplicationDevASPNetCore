@@ -1,0 +1,25 @@
+﻿@page
+@model WA30.Pages.serversideModel
+@{
+}
+
+
+<h1>Server Side</h1>
+
+<form method="post">
+    <input asp-for="Filter" placeholder="Type filter" />
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <tbody>
+        @foreach (var lista in Model.Products)
+        {
+            <tr>
+                <td>@lista.CategoryId</td>
+                <td>@lista.ProductName</td>
+                <td>@lista.UnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
