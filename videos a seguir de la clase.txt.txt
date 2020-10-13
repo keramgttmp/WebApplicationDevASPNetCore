@@ -5,4 +5,11 @@ https://www.screencast.com/t/GUWQSaT0aseQ
 Semana 2
 https://www.screencast.com/t/JEcVcDXn
 
+Semana 4
+CSS, https://www.screencast.com/t/0iVHS2TvpikX
+Bootstrap, https://www.screencast.com/t/14rwsgVUdopH
+AJAX, https://www.screencast.com/t/nBRBzBwzDU
+Vuejs, https://www.screencast.com/t/e0pgWRaIz
+
+
 
