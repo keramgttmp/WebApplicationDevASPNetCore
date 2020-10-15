@@ -1,12 +1,27 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     console.log('Document ready!');
 
-    let ps = new ProductService();
+    const bSearch = document.getElementById('bSearch');
+    const filter = document.getElementById('filter');
 
-    ps.getProducts().then((data) => {
-        console.log(data);
-    }).catch((err) => {
-        console.log(`Error: ${err}`);
+    bSearch.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        let ps = new ProductService();
+
+        ps.getProducts().then((data) => {
+            console.log(data);
+            //filtro con underscore
+            let filtered = _.filter(data, function (p) {
+                return p.productName.toLowerCase().indexOf(filter.value.toLowerCase()) !== -1;
+            });
+
+            console.log(filtered);
+
+        }).catch((err) => {
+            console.log(`Error: ${err}`);
+        });
+
     });
 
 });

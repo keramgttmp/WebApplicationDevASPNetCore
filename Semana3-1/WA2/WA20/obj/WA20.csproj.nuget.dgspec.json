@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA20\\WA20.csproj": {}
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA20\\WA20.csproj": {}
   },
   "projects": {
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA20\\WA20.csproj": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA20\\WA20.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA20\\WA20.csproj",
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA20\\WA20.csproj",
         "projectName": "WA20",
-        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA20\\WA20.csproj",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA20\\WA20.csproj",
         "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
-        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA20\\obj\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA20\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

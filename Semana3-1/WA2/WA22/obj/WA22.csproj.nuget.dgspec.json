@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA22\\WA22.csproj": {}
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA22\\WA22.csproj": {}
   },
   "projects": {
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj",
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj",
         "projectName": "Empresa.Conta.Data",
-        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj",
         "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
-        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\obj\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
-                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj"
+              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
+                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj"
               }
             }
           }
@@ -68,14 +68,14 @@
         }
       }
     },
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
         "projectName": "Empresa.Conta.Model",
-        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
         "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
-        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\obj\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA22\\WA22.csproj": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA22\\WA22.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA22\\WA22.csproj",
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA22\\WA22.csproj",
         "projectName": "WA22",
-        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA22\\WA22.csproj",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA22\\WA22.csproj",
         "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
-        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\WA22\\obj\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\WA22\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -156,11 +156,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj": {
-                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj"
+              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj": {
+                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Data\\Empresa.Conta.Data.csproj"
               },
-              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
-                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj"
+              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj": {
+                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj"
               }
             }
           }

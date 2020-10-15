@@ -9,6 +9,16 @@
         "css/bootstrap.min.css",
         "css/bootstrap.css"
       ]
+    },
+    {
+      "library": "underscore.js@1.11.0",
+      "destination": "wwwroot/lib/underscore.js/",
+      "files": [
+        "underscore-min.js",
+        "underscore-esm-min.js",
+        "underscore-esm.js",
+        "underscore.js"
+      ]
     }
   ]
 }

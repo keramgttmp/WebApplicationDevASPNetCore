@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z4wLHUgvRJUtE70fXlwa5BBZUYVCFxE2ec3g1lGQ4y8AIuVndbo15lBFtGiEPazkcDnGOlX+j/RnBcqzVGfRyg==",
+  "dgSpecHash": "A85EEInUrzR1exRXt6wp2zo9Yvr7zxlpQejpwC6IFU/5Z4peydYeuqZV8HSbw55+BJirRWZ3YdOQwTfTOj3OfQ==",
   "success": true,
-  "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
+  "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana3-1\\WA2\\Empresa.Conta.Model\\Empresa.Conta.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

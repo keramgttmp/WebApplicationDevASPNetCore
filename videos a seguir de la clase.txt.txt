@@ -10,6 +10,11 @@ CSS, https://www.screencast.com/t/0iVHS2TvpikX
 Bootstrap, https://www.screencast.com/t/14rwsgVUdopH
 AJAX, https://www.screencast.com/t/nBRBzBwzDU
 Vuejs, https://www.screencast.com/t/e0pgWRaIz
+bundleconfig, https://www.screencast.com/t/MIK8PubmJ9n
+
+
+Generación Base de Datos: https://www.screencast.com/t/S3vydB0ea15B
+
 
 
 
