@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8hXGb6qwd5OLlU5oWGVK3z0bnyQ1avuamDin1j9wOtQIQFyhVT//Sf7UVZuFTN9uQa2sQs84t00IMNWJIvzcTg==",
+  "success": true,
+  "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana5-1\\NorthwindStore\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

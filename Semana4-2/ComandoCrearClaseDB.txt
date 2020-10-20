@@ -1,1 +1,1 @@
- dotnet ef dbcontext scaffold "data source=.\BANKINGLY;initial catalog=Northwind;persist security info=True;user id=sa;password=P4ssw0rd;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -d -c NWContext -f
+ dotnet ef dbcontext scaffold "data source=.\BANKINGLY;initial catalog=Northwind;persist security info=True;user id=sa;password=P4ssw0rd;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -d -c NWContext -f -o ..\Northwind.Store.Model
