@@ -15,6 +15,7 @@ bundleconfig, https://www.screencast.com/t/MIK8PubmJ9n
 
 Generación Base de Datos: https://www.screencast.com/t/S3vydB0ea15B
 
+EF Core Linq: https://www.screencast.com/t/kdSSclATPjd4
 
 
 
