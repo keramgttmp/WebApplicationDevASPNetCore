@@ -2,6 +2,7 @@
 using Northwind.Store.Model;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace Northwind.Store.UI.Shell
 {
@@ -13,11 +14,13 @@ namespace Northwind.Store.UI.Shell
             using (var db = new NWContext())
             {
 
-                var vQuery = db.Customers;
+                var vQuery = from c in db.Customers
+                             orderby c.CompanyName
+                             select new { c.CompanyName, c.ContactName, c.Country};
 
                 foreach (var p in vQuery)
                 {
-                    Console.WriteLine($"{p.CompanyName}");
+                    Console.WriteLine($"{p.CompanyName.PadRight(50,' ')}{p.ContactName.PadRight(30, ' ')}{p.Country}");
                 }
 
             }

@@ -122,7 +122,7 @@ Entity Framework Core.
    
    Modifique el método Main de la clase Program de forma que haciendo uso de la clase NWContext se pueda mostrar
    en la consola un listado de todos los Customers, mostrando y obteniendo ÚNICAMENTE desde la base de datos 
-   los datos de: CompanyName, ContactName y Country, ordenado por CompanyName.
+   los datos de: CompanyName, ContactName y Country, ordenado por CompanyName. OK OK
    
 10. Actualmente la hilera de conexión es parte del constructor de la clase NWContext. Se debe modificar este comportamiento
     para que este valor se obtenga desde un archivo de configuración.
