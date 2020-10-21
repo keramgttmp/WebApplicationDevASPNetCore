@@ -9,7 +9,7 @@ namespace Northwind.Store.Model
     {
         public Region()
         {
-            Territories = new HashSet<Territories>();
+            Territories = new HashSet<Territory>();
         }
 
         [Key]
@@ -20,6 +20,6 @@ namespace Northwind.Store.Model
         public string RegionDescription { get; set; }
 
         [InverseProperty("Region")]
-        public virtual ICollection<Territories> Territories { get; set; }
+        public virtual ICollection<Territory> Territories { get; set; }
     }
 }

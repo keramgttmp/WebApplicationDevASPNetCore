@@ -16,10 +16,10 @@ namespace Northwind.Store.Model
         public string TerritoryId { get; set; }
 
         [ForeignKey(nameof(EmployeeId))]
-        [InverseProperty(nameof(Employees.EmployeeTerritories))]
-        public virtual Employees Employee { get; set; }
+        [InverseProperty(nameof(Model.Employee.EmployeeTerritories))]
+        public virtual Employee Employee { get; set; }
         [ForeignKey(nameof(TerritoryId))]
-        [InverseProperty(nameof(Territories.EmployeeTerritories))]
-        public virtual Territories Territory { get; set; }
+        [InverseProperty(nameof(Model.Territory.EmployeeTerritories))]
+        public virtual Territory Territory { get; set; }
     }
 }

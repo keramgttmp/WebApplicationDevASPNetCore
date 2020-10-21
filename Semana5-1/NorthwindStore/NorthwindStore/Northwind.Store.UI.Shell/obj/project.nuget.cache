@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QazZ0wOjFFsvIIMcxtkP0pMjYnQ7fie1aWn08czF8YJOMkaKvQZOFcgqN1UXPJsnxeKSnkRZgsM2YqwPvPy0eA==",
+  "dgSpecHash": "H4QnQdZ6Ft+2BjRvofQOkqzLnrzqmaLOv2ntLRn3d7lpENG33TWXNRdqi7//seHE3aasNFwN+EszE0BtHVoBig==",
   "success": true,
   "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana5-1\\NorthwindStore\\NorthwindStore\\Northwind.Store.UI.Shell\\Northwind.Store.UI.Shell.csproj",
   "expectedPackageFiles": [
@@ -19,8 +19,13 @@
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.9\\microsoft.extensions.configuration.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.9\\microsoft.extensions.configuration.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.9\\microsoft.extensions.configuration.binder.3.1.9.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\3.1.9\\microsoft.extensions.configuration.fileextensions.3.1.9.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.9\\microsoft.extensions.configuration.json.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.9\\microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.9\\microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.9\\microsoft.extensions.fileproviders.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.9\\microsoft.extensions.fileproviders.physical.3.1.9.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.9\\microsoft.extensions.filesystemglobbing.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.logging\\3.1.9\\microsoft.extensions.logging.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.9\\microsoft.extensions.logging.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.extensions.options\\3.1.9\\microsoft.extensions.options.3.1.9.nupkg.sha512",

@@ -138,7 +138,7 @@ Entity Framework Core.
 	}
 	
 	Una vez creado el archivo modifique las propiedades del archivo otorgadas por Visual Studio, de forma
-	que Build Action sea Content, y Copy to Output Directory sea Copy if newer.
+	que Build Action sea Content, y Copy to Output Directory sea Copy if newer. OK OK
 	
 11. Dado que la lectura de la configuración para el acceso a datos se da en el archivo NWContext en el
     Class Library Nortwind.Store.Data es necesario efectuar algunos cambios para soportar la lectura del archivo de 
@@ -173,7 +173,7 @@ Entity Framework Core.
 	
 	Para comprobar que la modificación fué satisfactoria se debe volver a ejecutar la aplicación Northwind.Store.UI.Shell
 	obteniendo los mismos resultados, solamente que ahora los valores de conexión pueden ser proporcionados
-	por medio de un archivo de configuración. 
+	por medio de un archivo de configuración. OK OK
 	
 12. Modifique el nombre de las clases y sus archivos recientemente generados correspondientes a las entidades/modelos
     creados en el proceso de Scaffolding y colocadas en el proyecto Northwind.Store.Model, de forma que la redacción del nombre 
@@ -181,7 +181,7 @@ Entity Framework Core.
 	NWContext deben permanecer en plural.
 	
 	Una vez aplicados los cambios sobre los diferentes proyectos se debe comprobar que la aplicación de
-	consola Northwind.Store.UI.Shell continua funcionando de la misma manera.
+	consola Northwind.Store.UI.Shell continua funcionando de la misma manera. OK OK
 	
 13. Cambie la presentación del listado para que su presentación se lo más cercana al siguiente ejemplo. Los
     datos de CompanyName, ContactName y Country, deben estar debidamente alineados en su propia columna.
@@ -208,6 +208,8 @@ Entity Framework Core.
 	Eastern Connection                      Ann Devon               UK
 	Ernst Handel                            Roland Mendel           Austria
 	...
+
+OK OK
 
 14. OPCIONAL
 	Crear una aplicación de ASP.NET Core usando Razor Pages, con el nombre Northwind.Store.UI.Demo1.

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using Northwind.Store.Model;
 
 namespace Northwind.Store.Data
@@ -16,8 +18,8 @@ namespace Northwind.Store.Data
         {
         }
 
-        public virtual DbSet<AlphabeticalListOfProducts> AlphabeticalListOfProducts { get; set; }
-        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<AlphabeticalListOfProduct> AlphabeticalListOfProducts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CategorySalesFor1997> CategorySalesFor1997 { get; set; }
         public virtual DbSet<CurrentProductList> CurrentProductList { get; set; }
         public virtual DbSet<CustomerAndSuppliersByCity> CustomerAndSuppliersByCity { get; set; }
@@ -25,46 +27,54 @@ namespace Northwind.Store.Data
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<EmployeeTerritories> EmployeeTerritories { get; set; }
-        public virtual DbSet<Employees> Employees { get; set; }
-        public virtual DbSet<Invoices> Invoices { get; set; }
-        public virtual DbSet<OrderDetails> OrderDetails { get; set; }
-        public virtual DbSet<OrderDetailsExtended> OrderDetailsExtended { get; set; }
-        public virtual DbSet<OrderSubtotals> OrderSubtotals { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<OrderDetailExtended> OrderDetailsExtended { get; set; }
+        public virtual DbSet<OrderSubtotal> OrderSubtotals { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrdersQry> OrdersQry { get; set; }
         public virtual DbSet<ProductSalesFor1997> ProductSalesFor1997 { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
-        public virtual DbSet<ProductsAboveAveragePrice> ProductsAboveAveragePrice { get; set; }
-        public virtual DbSet<ProductsByCategory> ProductsByCategory { get; set; }
-        public virtual DbSet<QuarterlyOrders> QuarterlyOrders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductAboveAveragePrice> ProductsAboveAveragePrice { get; set; }
+        public virtual DbSet<ProductByCategory> ProductsByCategory { get; set; }
+        public virtual DbSet<QuarterlyOrder> QuarterlyOrders { get; set; }
         public virtual DbSet<Region> Region { get; set; }
         public virtual DbSet<SalesByCategory> SalesByCategory { get; set; }
         public virtual DbSet<SalesTotalsByAmount> SalesTotalsByAmount { get; set; }
-        public virtual DbSet<Shippers> Shippers { get; set; }
+        public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<SummaryOfSalesByQuarter> SummaryOfSalesByQuarter { get; set; }
         public virtual DbSet<SummaryOfSalesByYear> SummaryOfSalesByYear { get; set; }
-        public virtual DbSet<Suppliers> Suppliers { get; set; }
-        public virtual DbSet<Territories> Territories { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Territory> Territories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
+            //            {
+            //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+            //                optionsBuilder.UseSqlServer("data source=.\\BANKINGLY;initial catalog=Northwind;persist security info=True;user id=sa;password=P4ssw0rd;MultipleActiveResultSets=True;App=EntityFramework");
+            //            }
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("data source=.\\BANKINGLY;initial catalog=Northwind;persist security info=True;user id=sa;password=P4ssw0rd;MultipleActiveResultSets=True;App=EntityFramework");
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+                IConfigurationRoot configuration = builder.Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("NW"));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AlphabeticalListOfProducts>(entity =>
+            modelBuilder.Entity<AlphabeticalListOfProduct>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("Alphabetical list of products");
             });
 
-            modelBuilder.Entity<Categories>(entity =>
+            modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasIndex(e => e.CategoryName)
                     .HasName("CategoryName");
@@ -160,7 +170,7 @@ namespace Northwind.Store.Data
                     .HasConstraintName("FK_EmployeeTerritories_Territories");
             });
 
-            modelBuilder.Entity<Employees>(entity =>
+            modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasIndex(e => e.LastName)
                     .HasName("LastName");
@@ -174,7 +184,7 @@ namespace Northwind.Store.Data
                     .HasConstraintName("FK_Employees_Employees");
             });
 
-            modelBuilder.Entity<Invoices>(entity =>
+            modelBuilder.Entity<Invoice>(entity =>
             {
                 entity.HasNoKey();
 
@@ -183,7 +193,7 @@ namespace Northwind.Store.Data
                 entity.Property(e => e.CustomerId).IsFixedLength();
             });
 
-            modelBuilder.Entity<OrderDetails>(entity =>
+            modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => new { e.OrderId, e.ProductId })
                     .HasName("PK_Order_Details");
@@ -209,21 +219,21 @@ namespace Northwind.Store.Data
                     .HasConstraintName("FK_Order_Details_Products");
             });
 
-            modelBuilder.Entity<OrderDetailsExtended>(entity =>
+            modelBuilder.Entity<OrderDetailExtended>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("Order Details Extended");
             });
 
-            modelBuilder.Entity<OrderSubtotals>(entity =>
+            modelBuilder.Entity<OrderSubtotal>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("Order Subtotals");
             });
 
-            modelBuilder.Entity<Orders>(entity =>
+            modelBuilder.Entity<Order>(entity =>
             {
                 entity.HasIndex(e => e.CustomerId)
                     .HasName("CustomersOrders");
@@ -279,7 +289,7 @@ namespace Northwind.Store.Data
                 entity.ToView("Product Sales for 1997");
             });
 
-            modelBuilder.Entity<Products>(entity =>
+            modelBuilder.Entity<Product>(entity =>
             {
                 entity.HasIndex(e => e.CategoryId)
                     .HasName("CategoryID");
@@ -309,21 +319,21 @@ namespace Northwind.Store.Data
                     .HasConstraintName("FK_Products_Suppliers");
             });
 
-            modelBuilder.Entity<ProductsAboveAveragePrice>(entity =>
+            modelBuilder.Entity<ProductAboveAveragePrice>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("Products Above Average Price");
             });
 
-            modelBuilder.Entity<ProductsByCategory>(entity =>
+            modelBuilder.Entity<ProductByCategory>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("Products by Category");
             });
 
-            modelBuilder.Entity<QuarterlyOrders>(entity =>
+            modelBuilder.Entity<QuarterlyOrder>(entity =>
             {
                 entity.HasNoKey();
 
@@ -370,7 +380,7 @@ namespace Northwind.Store.Data
                 entity.ToView("Summary of Sales by Year");
             });
 
-            modelBuilder.Entity<Suppliers>(entity =>
+            modelBuilder.Entity<Supplier>(entity =>
             {
                 entity.HasIndex(e => e.CompanyName)
                     .HasName("CompanyName");
@@ -379,7 +389,7 @@ namespace Northwind.Store.Data
                     .HasName("PostalCode");
             });
 
-            modelBuilder.Entity<Territories>(entity =>
+            modelBuilder.Entity<Territory>(entity =>
             {
                 entity.HasKey(e => e.TerritoryId)
                     .IsClustered(false);
