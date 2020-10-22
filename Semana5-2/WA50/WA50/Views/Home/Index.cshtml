@@ -1,0 +1,33 @@
+﻿@using Northwind.Store.Model;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to ASP.Net CORE MVC X</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<form method="post">
+    <input name="filter" placeholder="Type filter" />
+    <button type="submit">Search</button>
+</form>
+
+@if (ViewData["products"] != null)
+
+{
+    var products = (List<Product>)ViewData["products"];
+    <table>
+        <tbody>
+            @foreach (var lista in products)
+            {
+                <tr>
+                    <td>@lista.CategoryId</td>
+                    <td>@lista.ProductName</td>
+                    <td>@lista.UnitPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

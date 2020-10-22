@@ -34,10 +34,7 @@ namespace Northwind.Store.UI.Demo1.Pages
                 var vData = vQuery.ToList();
 
                 Customers = vData;
-                //foreach (var p in vQuery)
-                //{
-                //    Console.WriteLine($"{p.CompanyName.PadRight(50, ' ')}{p.ContactName.PadRight(30, ' ')}{p.Country}");
-                //}
+
 
             }
         }
