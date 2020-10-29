@@ -1,12 +1,62 @@
 ﻿@model IEnumerable<WA4.ViewModels.CategoryProductsViewModel>;
+@using WA4.Helpers.HTML
 @{
     ViewData["Title"] = "Home Page";
 }
+<div class="row">
+    <div class="col-4">
+        <a class="btn btn-outline-primary"
+           ajax="true" ajax-url="/Home/IndexPartial/1" ajax-target="#demo" ajax-mode="after">
+            Get Detail
+        </a>
+    </div>
+    <div class="col-8">
+        <form class="form-inline" ajax="true" ajax-method="post"
+              ajax-url="/Home/IndexViewComponent" ajax-target="#demo"
+              ajax-failure="productAjaxFailure">
+            <div class="form-group">
+                <label>Product ID</label>
+                <input type="text" class="form-control" name="id" placeholder="Type product ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Detail</button>
+        </form>
+        <script>
+            function productAjaxFailure(xhr) {
+                if (xhr.status === 404) {
+                    alert('Product not found!');
+                }
+            }
+        </script>
+    </div>
+</div>
+<table class="table table-bordered table-striped">
+    <tbody id="demo"></tbody>
+</table>
+
+@section scripts {
+    <environment names="Development">
+        <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
+    </environment>
+    <environment names="Production">
+        <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+    </environment>
+}
+
+<hr />
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+<form asp-action="Index">
+    <div class="form-group">
+        <input type="search" class="form-control" name="filter"
+               placeholder="Search filter ..." value="@ViewBag.filter">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
 
 @if (Model != null)
 
@@ -33,17 +83,69 @@
                                 <th>Stock</th>
                             </tr>
                         </thead>
-                        @foreach (var item in lista.Items)
-                        {
-                       <tbody>
-                            <tr>
-                                <td>@item.ProductName</td>
-                                <td>@item.QuantityPerUnit</td>
-                                <td>@item.UnitPrice</td>
-                                <td>@item.UnitsInStock</td>
-                            </tr>
+                        @*@foreach (var item in lista.Items)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.QuantityPerUnit</td>
+                                        <td>@item.UnitPrice</td>
+                                        <td>@item.UnitsInStock</td>
+                                    </tr>
+                                </tbody>
+                            }*@
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    @ProductHelper.ProductDetail(p)
+                                }
+                            </tbody>*@
+
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    @ProductHelper.ProductDetail2(p)
+                                }
+                            </tbody>*@
+
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    @Html.ProductDetail(p)
+                                }
+                            </tbody>*@
+
+                        @*Usando TagHelper*@
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    <product data="p" />
+                                }
+                            </tbody>*@
+
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    <tr product="p"></tr>
+                                }
+                            </tbody>*@
+
+                        @*<tbody>
+                                @foreach (var p in lista.Items)
+                                {
+                                    @await Component.InvokeAsync("Product", new { id = p.ProductId })
+                                }
+                            </tbody>*@
+
+                        <tbody>
+                            @foreach (var p in lista.Items)
+                            {
+                                <partial name="ProductPartial" model="p" />
+                                await Html.RenderPartialAsync("ProductPartial", p);
+                                @await Html.PartialAsync("ProductPartial", p)
+                            }
                         </tbody>
-                        }
+
                         <tfoot>
                             <tr>
                                 <td colspan="4">

@@ -160,7 +160,9 @@ Actividades
 				 CategoryName = CategoryProducts.Key,
 				 Items = CategoryProducts.ToList()
 			 };
-   
+
+	OK   
+
 8. Se debe modificar la vista de Index del controlador Home para filtrar la lista de productos
    por el nombre de producto. La búsqueda debe ser tipo LIKE sobre el campo ProductName. 
    
@@ -178,7 +180,9 @@ Actividades
 		</div>
 		<button type="submit" class="btn btn-primary">Search</button>
 	</form>
-	
+
+	OK
+
 9. Existen diversas opciones que permiten en una vista de Razor encapsular el código responsable de la generación
    del HTML de forma que se permita la reutilización y la distribución de forma más sencilla.
    
@@ -194,6 +198,7 @@ Actividades
    vista de Razor se hace incluyendo una etiqueta similar a las de HTML, así como existe <p> o <h1>, con 
    los Tag Helpers se puede tener una etiqueta <detalle-producto> cuya procesamiento de como resultado el
    detalle de un producto con una tabla de HTML.   
+ OK
    
 10. En la raíz del proyecto WA4 cree una nueva carpeta de nombre Helpers, y dentro de esta
    otra carpeta de nombre HTML. Agregar dentro de la carpeta Helpers\HTML la clase
@@ -247,6 +252,10 @@ Actividades
 		@Html.ProductDetail(p)
 	}
 	</tbody>
+
+OK
+
+
    
 11. ASP.NET Core MVC agrega otra forma de Helper conocido como Tag Helper, este permite
 	lograr el mismo objetivo que con los HTML Helpers pero utilizando sintaxis muy 
@@ -285,6 +294,8 @@ Actividades
 		public Product Data { get; set; }
 	
 	Observe su correspondencia con la etiqueta: <product data="p" />
+OK
+
 	
 	También es posible crear Tag Helpers sin utilizar la convención, y en su
 	lugar aplicar anotaciones (atributos) para definir la correspondencia con los
@@ -387,6 +398,8 @@ Actividades
 	Con los ViewComponents se puede agregar código previo a obtener
 	la vista asociada.
 
+OK
+
 13. Otro recurso para encapsular contenido de Razor es por medio de 
 	Partial Views. Las Partial Views permiten encapsular Razor en una
 	vista que puede ser reutilizada en otras vistas, de hecho casi
@@ -438,6 +451,9 @@ Actividades
 	aunque se obtiene el mismo resultado, esta forma de incluir la Partial View también permite 
 	obtener el resultado de la generación de la Partial View y en caso de se necesario manipular 
 	el contenido previo a incorporarse al resultado de la generación de la vista.
+
+OK
+
 
 14. En al ASP.NET MVC que existe en el .NET Framework existen HTML Helpers específicos
 	para facilitan la implementación de AJAX, específicamente la generación de solicitudes
