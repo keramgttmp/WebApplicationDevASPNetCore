@@ -1,5 +1,5 @@
 Link Compartido:
-
+https://www.screencast.com/users/gbermude/folders/ASP.NET%20Core%20(2020)
 
 Semana 1
 https://www.screencast.com/t/I27RZEdf
@@ -21,4 +21,9 @@ Generación Base de Datos: https://www.screencast.com/t/S3vydB0ea15B
 EF Core Linq: https://www.screencast.com/t/kdSSclATPjd4
 
 
+
+Semana 7
+https://www.screencast.com/t/LYoC1MRnKC9
+
+https://www.screencast.com/users/gbermude/folders/ASP.NET%20Core%20(2020)/media/028ace79-67ce-41d1-a014-9a39931fc936
 

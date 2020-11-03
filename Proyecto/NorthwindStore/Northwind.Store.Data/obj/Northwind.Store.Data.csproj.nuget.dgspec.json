@@ -1,0 +1,154 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Data\\Northwind.Store.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Data\\Northwind.Store.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Data\\Northwind.Store.Data.csproj",
+        "projectName": "Northwind.Store.Data",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Data\\Northwind.Store.Data.csproj",
+        "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KennethAlpizar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj": {
+                "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj",
+        "projectName": "Northwind.Store.Model",
+        "projectPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\Northwind.Store.Model.csproj",
+        "packagesPath": "C:\\Users\\KennethAlpizar\\.nuget\\packages\\",
+        "outputPath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KennethAlpizar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
