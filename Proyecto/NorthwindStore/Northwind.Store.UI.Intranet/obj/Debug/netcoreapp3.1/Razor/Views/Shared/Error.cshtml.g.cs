@@ -13,21 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\Views\_ViewImports.cshtml"
+#line 1 "C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\_ViewImports.cshtml"
 using Northwind.Store.UI.Intranet;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\Views\_ViewImports.cshtml"
+#line 2 "C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\_ViewImports.cshtml"
 using Northwind.Store.UI.Intranet.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\_ViewImports.cshtml"
+using Northwind.Store.Model;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"be90b1b5318944be8d3a936929aebf638ad4b420", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2f784e5cc24555b99f1c1e8827650c907cb75343", @"/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

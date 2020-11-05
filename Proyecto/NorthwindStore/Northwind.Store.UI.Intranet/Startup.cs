@@ -12,6 +12,7 @@ using Northwind.Store.UI.Intranet.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Northwind.Store.Data;
 
 namespace Northwind.Store.UI.Intranet
 {
@@ -27,7 +28,14 @@ namespace Northwind.Store.UI.Intranet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            ///Contexto de Data, se usa _Pool para no tener crear una instancia por cada vez que se ocupa
+            ///por default se tiene 128 instancias
+            services.AddDbContextPool<NWContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("NW")));
+
+            ///Contexto de Identity
+            services.AddDbContextPool<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("NW")));
 
@@ -62,6 +70,8 @@ namespace Northwind.Store.UI.Intranet
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute("admin", "admin", "admin/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

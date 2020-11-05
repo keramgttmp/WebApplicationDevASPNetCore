@@ -8,10 +8,10 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Semana5-1\NorthwindStore\NorthwindStore\
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana5-1\NorthwindStore\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\bin\Debug\netstandard2.1\Northwind.Store.Model.deps.json
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\bin\Debug\netstandard2.1\Northwind.Store.Model.dll
-C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\bin\Debug\netstandard2.1\Northwind.Store.Model.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.csprojAssemblyReference.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.AssemblyInfoInputs.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.AssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\bin\Debug\netstandard2.1\Northwind.Store.Model.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.csproj.CoreCompileInputs.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Model\obj\Debug\netstandard2.1\Northwind.Store.Model.pdb

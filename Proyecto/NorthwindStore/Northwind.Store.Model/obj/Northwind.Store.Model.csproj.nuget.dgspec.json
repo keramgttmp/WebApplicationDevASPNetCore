@@ -43,6 +43,14 @@
       "frameworks": {
         "netstandard2.1": {
           "dependencies": {
+            "Catel.Core": {
+              "target": "Package",
+              "version": "[5.12.10, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[4.7.0, )"
