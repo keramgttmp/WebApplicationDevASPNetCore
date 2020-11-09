@@ -101,11 +101,21 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName,Description,Picture")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName,Description,Picture")] Category category,
+            IFormFile picture)
         {
             if (id != category.CategoryId)
             {
                 return NotFound();
+            }
+
+            if (picture != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    picture.CopyTo(ms);
+                    category.Picture = ms.ToArray();
+                }
             }
 
             if (ModelState.IsValid)

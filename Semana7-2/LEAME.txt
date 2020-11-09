@@ -106,7 +106,14 @@ eliminar la categoría y que se obtiene el detalle de la misma.
 ESTUDIANTES: Agregar por medio de Scaffolding los mantenimientos de datos (CRUD)
 para los modelos
 
-- Customers, Employees, Products, Region, Shippers, Suppliers, Territories, Orders
+- Customers, OK
+Employees, OK Se debe agregar lo de las imagenes
+Products, OK
+Region, OK
+Shippers, OK
+Suppliers, OK
+Territories,  OK
+Orders OK
 
 Opcional 1: Agregar a la acción de Details del controlador de Orders, que se muestre
 el detalle de los productos de la orden y el monto total de la misma.

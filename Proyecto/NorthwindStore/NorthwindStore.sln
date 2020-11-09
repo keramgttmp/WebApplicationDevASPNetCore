@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Store.Model", "No
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Store.Data", "Northwind.Store.Data\Northwind.Store.Data.csproj", "{1D248DDD-BE24-4292-A97D-A52C136EA286}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Store.UI.Demo1", "Northwind.Store.UI.Demo1\Northwind.Store.UI.Demo1.csproj", "{CEF51C0E-443B-4718-9321-E388FD80BD82}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Store.UI.Intranet", "Northwind.Store.UI.Intranet\Northwind.Store.UI.Intranet.csproj", "{B84F668E-0181-4DE1-9E6C-37B09F7EBCC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Store.UI.Intranet", "Northwind.Store.UI.Intranet\Northwind.Store.UI.Intranet.csproj", "{B84F668E-0181-4DE1-9E6C-37B09F7EBCC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{1D248DDD-BE24-4292-A97D-A52C136EA286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D248DDD-BE24-4292-A97D-A52C136EA286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D248DDD-BE24-4292-A97D-A52C136EA286}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEF51C0E-443B-4718-9321-E388FD80BD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEF51C0E-443B-4718-9321-E388FD80BD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEF51C0E-443B-4718-9321-E388FD80BD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEF51C0E-443B-4718-9321-E388FD80BD82}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B84F668E-0181-4DE1-9E6C-37B09F7EBCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B84F668E-0181-4DE1-9E6C-37B09F7EBCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B84F668E-0181-4DE1-9E6C-37B09F7EBCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
