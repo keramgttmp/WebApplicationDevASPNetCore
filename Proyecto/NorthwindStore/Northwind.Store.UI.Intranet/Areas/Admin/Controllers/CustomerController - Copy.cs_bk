@@ -7,45 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
-using Northwind.Store.UI.Intranet.Areas.Admin.ViewModels;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CustomerController : Controller
+    public class CustomerController_bak : Controller
     {
         private readonly NWContext _context;
 
-        public CustomerController(NWContext context)
+        public CustomerController_bak(NWContext context)
         {
             _context = context;
         }
 
         // GET: Admin/Customer
-        public IActionResult Index(CustomerViewModel cvm)
+        public async Task<IActionResult> Index()
         {
-            //var filter = HttpContext.Session.GetString(nameof(cvm.Filter));
-
-            //cvm.Filter = (cvm.Filter ?? filter) ?? "";
-            //HttpContext.Session.SetString(nameof(cvm.Filter), cvm.Filter);
-
-            //if (cvm.Filter != filter)
-            //{
-                //cvm.Page = 1;
-            //}
-
-            var result = new List<Customer>();
-            
-            cvm.TotalCount = _context.Customers.Count();
-
-            result = _context.Customers.OrderBy(p => p.CompanyName).Skip((cvm.Page - 1) * cvm.PageSize).
-                    Take(cvm.PageSize).ToList();
-            
-
-            //var vm = new ProductIndexViewModel() { Products = result };
-            cvm.Customers = result;
-
-            return View(cvm);
+            return View(await _context.Customers.ToListAsync());
         }
 
         // GET: Admin/Customer/Details/5

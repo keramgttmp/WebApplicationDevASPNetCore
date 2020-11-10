@@ -445,6 +445,7 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Customer\Delete.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Customer\Details.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Customer\Edit.cshtml.g.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Customer\Index - Copy.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Customer\Index.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Employee\Create.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Employee\Delete.cshtml.g.cs

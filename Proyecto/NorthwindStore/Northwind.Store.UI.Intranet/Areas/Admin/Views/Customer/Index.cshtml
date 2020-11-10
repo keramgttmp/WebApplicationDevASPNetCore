@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Northwind.Store.Model.Customer>
+﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.CustomerViewModel
+@using Northwind.Store.Model
 
 @{
     ViewData["Title"] = "Index";
@@ -11,42 +12,42 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContactTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Region)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fax)
-            </th>
-            <th></th>
-        </tr>
+        @*<tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContactName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContactTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Region)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostalCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fax)
+                </th>
+                <th></th>
+            </tr>*@
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Customers)
         {
             <tr>
                 <td>
@@ -87,4 +88,34 @@
             </tr>
         }
     </tbody>
+    <tfoot>
+        @if (Model.TotalCount > Model.PageSize)
+        {
+        <tr>
+            @{ int previous = Model.Page - 1;
+                int next = Model.Page + 1; }
+            <td>
+                <a href="@Url.Action("Index")?page=1" title="Primero">|&lt;</a>
+            </td>
+            <td>
+                @if (previous > 0)
+                {
+                    <a href="@Url.Action("Index")?page=@previous" title="Anterior">&lt;</a>}
+            </td>
+            <td>
+                @Model.Page / @Model.PageCount  <strong>Total Items: @Model.TotalCount</strong>
+            </td>
+            <td>
+                @if (next <= Model.PageCount)
+                {
+                    <a href="@Url.Action("Index")?page=@next" title="Siguiente">&gt;</a>}
+            </td>
+            <td>
+                @if (next <= Model.PageCount)
+                {
+                    <a href="@Url.Action("Index")?page=@Model.PageCount" title="Último">&gt;|</a>}
+            </td>
+        </tr>
+       }
+    </tfoot>
 </table>
