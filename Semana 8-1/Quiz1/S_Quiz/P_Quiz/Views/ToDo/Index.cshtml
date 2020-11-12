@@ -1,0 +1,81 @@
+﻿@*@model IEnumerable<P_Quiz.ToDo>*@
+@model P_Quiz.ViewModels.ToDoViewModel
+@using P_Quiz.Models
+
+@{
+    ViewData["Title"] = "Tasks To Do";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New Task</a>
+</p>
+
+<form method="get">
+    <input asp-for="Filter" placeholder="Type filter here" />
+    <button type="submit">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Title)*@
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Due)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ToDo)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => item.Title)
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Due)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        @if (Model.TotalCount > Model.PageSize)
+        {
+            <tr>
+                @{ int previous = Model.Page - 1;
+                    int next = Model.Page + 1; }
+                <td>
+                    <a href="@Url.Action("Index")?page=1" title="Primero">|&lt;</a>
+                </td>
+                <td>
+                    @if (previous > 0)
+                    {
+                        <a href="@Url.Action("Index")?page=@previous" title="Anterior">&lt;</a>}
+                </td>
+                <td>
+                    @Model.Page / @Model.PageCount  <strong>Total Items: @Model.TotalCount</strong>
+                </td>
+                <td>
+                    @if (next <= Model.PageCount)
+                    {
+                        <a href="@Url.Action("Index")?page=@next" title="Siguiente">&gt;</a>}
+                </td>
+                <td>
+                    @if (next <= Model.PageCount)
+                    {
+                        <a href="@Url.Action("Index")?page=@Model.PageCount" title="Último">&gt;|</a>}
+                </td>
+            </tr>
+        }
+    </tfoot>
+</table>
