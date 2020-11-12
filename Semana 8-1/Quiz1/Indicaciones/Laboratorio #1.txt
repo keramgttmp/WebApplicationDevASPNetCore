@@ -74,6 +74,8 @@ Entity Framework Core.
    
    -- Para todo la base de datos
    dotnet ef dbcontext scaffold "Data Source=.\sqlexpress;Database=Northwind;Integrated Security=SSPI;" Microsoft.EntityFrameworkCore.SqlServer -d -c NWContext -f -o ..\Northwind.Store.Model
+
+
    -- Para una esquema específico
    dotnet ef dbcontext scaffold "Data Source=.\sqlexpress;Database=Northwind;Integrated Security=SSPI;" Microsoft.EntityFrameworkCore.SqlServer --schema dbo -c NWContext -f -o ..\Northwind.Store.Model
 

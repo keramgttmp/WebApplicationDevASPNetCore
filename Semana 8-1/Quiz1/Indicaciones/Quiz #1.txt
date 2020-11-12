@@ -17,24 +17,30 @@ una base de datos nueva.
 
 Ejercicios.
 
-1. 	Crear aplicación con la platilla de ASP.NET Core MVC.
+1. 	Crear aplicación con la platilla de ASP.NET Core MVC. OK
 
 ## Valor: 1 punto.
 
 2. 	Crear dentro de la aplicación recien creada la clase de contexto y
 	modelos necesarios para la conexión a base de datos y dar mantenimiento a 
 	datos de la tabla ToDo, todo ello haciendo uso del Entity Framework Core.
+
+dotnet ef dbcontext scaffold "data source=.\\BANKINGLY;initial catalog=quiz;persist security info=True;user id=sa;password=P4ssw0rd;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer --schema quiz -c QDbContext -f -o ..\M_Quiz.Store.Model
 	
 ## Valor: 2 puntos.
 
 3. 	Crear un nuevo controlador con el nombre ToDo que cuente con las acciones
 	y la vistas necesarias para poder hacer el mantenimiento de datos de la tabla
 	ToDo.
+OK
+
 ## Valor: 2 puntos.
 
 4. 	Modificar el menú pricipal de la aplicación para agregar un nuevo
 	enlace de forma que se puede usar para llegar hasta la vista Index del
 	controlador ToDo.
+
+OK
 	
 ## Valor: 1 punto.
 
@@ -45,7 +51,7 @@ Ejercicios.
 
 	Al ingregar a la acción Index la primera vez se obtiene al menos la primera 
 	págida de datos existentes.
-
+OK
 ## Valor: 2 puntos.
 
 6. 	Modificar en el controlador ToDo la vista Index y su acción correspondiente
