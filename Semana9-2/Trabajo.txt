@@ -1,0 +1,2 @@
+1. Modificar a ProductController para usar el patrón Repository
+2. Implentar un carrito de compras de acuerdo al tema de Session presentado

@@ -27,5 +27,18 @@ Semana 7
 https://www.screencast.com/t/LYoC1MRnKC9
 https://www.screencast.com/users/gbermude/folders/ASP.NET%20Core%20(2020)/media/028ace79-67ce-41d1-a014-9a39931fc936
 
-7-2
+Semana 9
+9-1
+https://www.screencast.com/t/QtBGxTE40lp mejora en el acceso a los datos
+
+https://www.screencast.com/t/QtBGxTE40lp
+ModelState.cs	IObjectWithState.cs ModelBase.cs
+Northwind.Store.Notification
+NWContext2, PageFilter, IRepository, BaseRepository, CategoryRepository 
+
+https://www.screencast.com/t/v0qDUe69hTXU
+
+9-2
+Carrito https://www.screencast.com/t/M0aBIFn2
+
 
