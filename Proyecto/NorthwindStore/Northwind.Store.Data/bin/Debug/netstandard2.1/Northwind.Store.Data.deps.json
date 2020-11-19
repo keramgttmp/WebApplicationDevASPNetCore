@@ -14,7 +14,9 @@
           "Microsoft.Extensions.Configuration": "3.1.9",
           "Microsoft.Extensions.Configuration.FileExtensions": "3.1.9",
           "Microsoft.Extensions.Configuration.Json": "3.1.9",
-          "Northwind.Store.Model": "1.0.0"
+          "Northwind.Store.Model": "1.0.0",
+          "Northwind.Store.Notification": "1.0.0",
+          "System.Linq.Dynamic.Core": "1.2.5"
         },
         "runtime": {
           "Northwind.Store.Data.dll": {}
@@ -1110,6 +1112,17 @@
           }
         }
       },
+      "System.Linq.Dynamic.Core/1.2.5": {
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Linq.Dynamic.Core.dll": {
+            "assemblyVersion": "1.2.5.0",
+            "fileVersion": "1.2.5.0"
+          }
+        }
+      },
       "System.Linq.Expressions/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1863,6 +1876,14 @@
         "runtime": {
           "Northwind.Store.Model.dll": {}
         }
+      },
+      "Northwind.Store.Notification/1.0.0": {
+        "dependencies": {
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "Northwind.Store.Notification.dll": {}
+        }
       }
     }
   },
@@ -2579,6 +2600,13 @@
       "path": "system.linq/4.3.0",
       "hashPath": "system.linq.4.3.0.nupkg.sha512"
     },
+    "System.Linq.Dynamic.Core/1.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uTZSZvntd0Qwpb7Iwq/QZRX+osr57XwDfh2fX6S6PGxl+k5C9ehK7rxs9DFJlCVSTgVhk4CSf6fobhN//uxggw==",
+      "path": "system.linq.dynamic.core/1.2.5",
+      "hashPath": "system.linq.dynamic.core.1.2.5.nupkg.sha512"
+    },
     "System.Linq.Expressions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2951,6 +2979,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "Northwind.Store.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Northwind.Store.Notification/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

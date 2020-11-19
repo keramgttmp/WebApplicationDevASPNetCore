@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AF4p1aXPyg2myv2k8X5ckDR7LET1FfRPARdv6i3NnXpTf56Jg7MAiNqqNellBM9nzCQh+qQc9CNy30SbuE016A==",
+  "dgSpecHash": "No3d9cenCyunZE0Cfqq50MpvcB0wIFeAVxL0oELlUZuXA/RUpeD3zZ4IKOUnFsTRgKyrDQSZgQi953v29KW0pg==",
   "success": true,
   "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Proyecto\\NorthwindStore\\Northwind.Store.UI.Intranet\\Northwind.Store.UI.Intranet.csproj",
   "expectedPackageFiles": [
@@ -156,6 +156,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\KennethAlpizar\\.nuget\\packages\\system.linq.dynamic.core\\1.2.5\\system.linq.dynamic.core.1.2.5.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",

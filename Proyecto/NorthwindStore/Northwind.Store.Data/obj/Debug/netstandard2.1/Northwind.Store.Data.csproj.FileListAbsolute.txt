@@ -14,7 +14,9 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Data.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Data.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Model.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Notification.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Model.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Debug\netstandard2.1\Northwind.Store.Notification.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Debug\netstandard2.1\Northwind.Store.Data.csprojAssemblyReference.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Debug\netstandard2.1\Northwind.Store.Data.AssemblyInfoInputs.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Debug\netstandard2.1\Northwind.Store.Data.AssemblyInfo.cs
