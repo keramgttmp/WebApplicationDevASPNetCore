@@ -8,7 +8,9 @@
     @foreach (var p in Model)
     {
         <li>
-            <a asp-action="Add" asp-route-id="@p.ProductId">
+            @*Indicamos que queremos ir a otro controller por medio de asp-controller , se puede 
+                también indicar el área*@
+            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@p.ProductId">
                 @p.ProductName <strong>(+)</strong>
             </a>
         </li>

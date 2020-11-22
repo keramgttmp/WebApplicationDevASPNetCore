@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Northwind.Store.Data;
+using WA70.Settings;
 
 namespace WA70
 {
@@ -41,8 +42,11 @@ namespace WA70
 
             services.AddControllersWithViews();
 
-            //se agrega la posibilidad de tener acceso al contexto del http
+            //se agrega la posibilidad de tener acceso al contexto del http y leer desde las vistas dicho contexto
             services.AddHttpContextAccessor();
+
+            //se agrega el servicio referido a la clase SessionSettings para el manejo de la sesión
+            services.AddTransient(typeof(SessionSettings));
 
         }
 

@@ -367,6 +367,7 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.TagHelpers.input.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.TagHelpers.output.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.RazorCoreGenerate.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -383,4 +384,3 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\WA70.genruntimeconfig.cache
-C:\Cenfotec\WebApplicationDevASPNetCore\Semana9-2\WA70\WA70\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
