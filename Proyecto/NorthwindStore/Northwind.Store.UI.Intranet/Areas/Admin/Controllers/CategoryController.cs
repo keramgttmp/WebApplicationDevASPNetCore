@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
 using Northwind.Store.Notification;
+using Northwind.Store.UI.Intranet.Areas.Admin.ViewModels;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {

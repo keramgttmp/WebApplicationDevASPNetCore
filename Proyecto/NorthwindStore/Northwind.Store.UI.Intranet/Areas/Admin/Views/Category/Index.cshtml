@@ -1,9 +1,7 @@
-﻿@model CategoryIndexViewModel
+﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.CategoryIndexViewModel
 @using Microsoft.AspNetCore.Http.Extensions
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
 <h1>Index</h1>
 
@@ -42,30 +40,28 @@
                 <tbody>
                     @foreach (var item in Model.Items)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CategoryName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Description)
-                            </td>
-                            <td>
-                                @*@Html.DisplayFor(modelItem => item.Picture)*@
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-                            </td>
-                        </tr>
-                    }
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Picture)*@
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+            </td>
+        </tr>}
                 </tbody>
                 <tfoot>
                     <tr>
                         @for (int i = 1; i <= Model.Paging.PageCount; i++)
                         {
-                            <td><button data-page="@i" data-command="paging">@i</button></td>
-                        }
+            <td><button data-page="@i" data-command="paging">@i</button></td>}
                     </tr>
                 </tfoot>
             </table>
