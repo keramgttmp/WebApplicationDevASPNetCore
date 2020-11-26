@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SYcZNbgFPqzl33M910W7tHS8sofNQuwqcpAo4DcTzqRm+hr93RNIAEZqi/FNS9ObV4NH35Wx+++hjxnDy5x+zg==",
+  "dgSpecHash": "KCNXmvlzMUhSyJJi30xogH498po9yPl2h1yF5rPixyd0PNxWcIeGyiFOlqX0RhsIDY7kUURpE6UGxaIdUPIPSA==",
   "success": true,
-  "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana 8-1\\Quiz1\\S_Quiz\\P_Quiz\\P_Quiz.csproj",
+  "projectFilePath": "C:\\Cenfotec\\WebApplicationDevASPNetCore\\Semana8-1\\Quiz1\\S_Quiz\\P_Quiz\\P_Quiz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\KennethAlpizar\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.9\\microsoft.aspnetcore.mvc.razor.extensions.3.1.9.nupkg.sha512",

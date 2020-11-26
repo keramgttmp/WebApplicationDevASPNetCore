@@ -26,10 +26,10 @@ Actividades
 
 1. Crear una primer vista desde donde se pueda hacer la búsqueda por el nombre del producto. El
 resultado se debe presentar en una lista, cada elemento de la lista una vez que se haga clic debería
-llevar a otra vista que permita visualizar el detalle del producto seleccionado. 5 puntos.
+llevar a otra vista que permita visualizar el detalle del producto seleccionado. 5 puntos. >>>>>>OK
 
 Utilizar como base para la presentación de la lista de los resultados la base del HTML del list-group
-de Bootstrap. https://getbootstrap.com/docs/4.3/components/list-group/
+de Bootstrap. https://getbootstrap.com/docs/4.3/components/list-group/ >>>>>>PENDIENTE
 
 Ver la página Index en el archivo Quiz.pdf como una base del resultado visual esperado.
 
