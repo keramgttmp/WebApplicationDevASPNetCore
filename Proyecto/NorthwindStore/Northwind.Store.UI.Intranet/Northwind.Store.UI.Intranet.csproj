@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <None Remove="Areas\Admin\Controllers\CustomerController - Copy.cs_bk" />
+    <None Remove="Areas\Admin\Controllers\ProductController - copia.cs_bk" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="Areas\Admin\Controllers\CustomerController - Copy.cs_bk" />
+    <Compile Include="Areas\Admin\Controllers\ProductController - copia.cs_bk" />
   </ItemGroup>
 
   <ItemGroup>

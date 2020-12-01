@@ -1,0 +1,8 @@
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.csprojAssemblyReference.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.AssemblyInfoInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.AssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.csproj.CoreCompileInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.MvcApplicationPartsAssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.MvcApplicationPartsAssemblyInfo.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.RazorAssemblyInfo.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.RazorAssemblyInfo.cs

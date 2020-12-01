@@ -63,7 +63,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             //var category = await _context.Categories
             //    .FirstOrDefaultAsync(m => m.CategoryId == id);
             var category = await _cR.Get(id.Value);
-            var category2 = _cD.Read(id.Value);
+            var category2 = _cD.Read(id.Value);///Ojo revisar
 
             if (category == null)
             {
