@@ -7,23 +7,31 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
+using Northwind.Store.Notification;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class RegionController : Controller
     {
+        private readonly Notifications ns = new Notifications();
         private readonly NWContext _context;
+        private readonly IRepository<Region, int> _rIR;
+        private readonly RegionRepository _rR;
 
-        public RegionController(NWContext context)
+        public RegionController(NWContext context, IRepository<Region, int> rIR, RegionRepository rR)
         {
             _context = context;
+            _rIR = rIR;
+            _rR = rR;
         }
 
         // GET: Admin/Region
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index( ViewModels.RegionIndexViewModel vm)
         {
-            return View(await _context.Region.ToListAsync());
+            await vm.HandleRequest(_rR);
+            return View(vm);
+            //return View(await _context.Region.ToListAsync());
         }
 
         // GET: Admin/Region/Details/5

@@ -1,73 +1,100 @@
-﻿@model IEnumerable<Northwind.Store.Model.Employee>
-
-@{
-    ViewData["Title"] = "Employees Index";
-}
+﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.EmployeeIndexViewModel
+@using Microsoft.AspNetCore.Http.Extensions
+@{ ViewData["Title"] = "Employees Index"; }
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TitleOfCourtesy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HireDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Region)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HomePhone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Extension)
-            </th>
-            <th>
-                @@Html.DisplayNameFor(model => model.Photo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhotoPath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReportsToNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
+<form method="post" id="form1">
+    <div class="d-flex flex-column">
+        <div>
+            <input asp-for="Command" type="hidden" />
+            <input asp-for="Filter.FirstName" placeholder="Search here ..." />
+            <input asp-for="Paging.Page" type="hidden" />
+            <input asp-for="Paging.Sort" type="hidden" />
+            <input asp-for="Paging.SortDir" type="hidden" />
+            <button data-command="search">Search</button>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.LastName)*@
+                            <button data-sort="LastName" data-command="order">Last Name</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.FirstName)*@
+                            <button data-sort="FirstName" data-command="order">First Name</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Title)*@
+                            Title
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.TitleOfCourtesy)*@
+                            TitleOfCourtesy
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.BirthDate)*@
+                            BirthDate
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.HireDate)*@
+                            HireDate
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Address)*@
+                            Address
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.City)*@
+                            City
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Region)*@
+                            Region
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.PostalCode)*@
+                            PostalCode
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Country)*@
+                            Country
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.HomePhone)*@
+                            HomePhone
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Extension)*@
+                            Extension
+                        </th>
+                        <!--<th>-->
+                        @*@@Html.DisplayNameFor(model => model.Photo)*@
+                        <!--Photo
+                        </th>
+                        <th>-->
+                        @*@Html.DisplayNameFor(model => model.Notes)*@
+                        <!--Notes
+                        </th>
+                        <th>-->
+                        @*@Html.DisplayNameFor(model => model.PhotoPath)*@
+                        <!--PhotoPath
+                        </th>-->
+                        <!--<th>-->
+                        @*@Html.DisplayNameFor(model => model.ReportsToNavigation)*@
+                        <!--ReportsToNavigation
+                        </th>-->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
@@ -108,24 +135,70 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Extension)
             </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Photo)*@
-            </td>
+            <!--<td>-->
+            @*@Html.DisplayFor(modelItem => item.Photo)*@
+            <!--</td>
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PhotoPath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReportsToNavigation.FirstName)
-            </td>
+            </td>-->
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ReportsToNavigation.FirstName)
+                </td>*@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
             </td>
-        </tr>
-}
-    </tbody>
-</table>
+        </tr>}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        @for (int i = 1; i <= Model.Paging.PageCount; i++)
+                        {
+                        <td><button data-page="@i" data-command="paging">@i</button></td>}
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</form>
+@Model.Paging.Count
+
+<script>
+    (function enableGrid(formId) {
+
+        let commands = document.querySelectorAll(`#${formId} button[data-command]`);
+        commands.forEach(c => {
+            c.addEventListener('click', function (event) {
+                //event.preventDefault();
+
+                let cm = this.dataset.command;
+
+                switch (cm) {
+                    case 'paging':
+                        const page = document.querySelector(`#${formId} input[name="Paging.Page"]`);
+                        page.value = this.dataset.page;
+                        break;
+                    case 'order':
+                        const sort = document.querySelector(`#${formId} input[name="Paging.Sort"]`);
+                        const sortDir = document.querySelector(`#${formId} input[name="Paging.SortDir"]`);
+
+                        if (sort.value !== this.dataset.sort) {
+                            sort.value = this.dataset.sort;
+                            sortDir.value = 'ASC';
+                        }
+                        else {
+                            sortDir.value = sortDir.value === 'ASC' ? 'DESC' : 'ASC';
+                        }
+                        break;
+                }
+
+                const command = document.querySelector(`#${formId} input[name="Command"]`);
+                command.value = cm;
+            });
+        });
+
+    })('form1');</script>

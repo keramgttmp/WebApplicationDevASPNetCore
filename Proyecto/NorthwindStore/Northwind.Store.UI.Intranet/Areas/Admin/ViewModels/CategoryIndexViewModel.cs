@@ -16,7 +16,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.ViewModels
         public IEnumerable<Category> Items { get; set; } = new List<Category>();
         public PageFilter Paging { get; set; } = new PageFilter() { Sort = "CategoryName" };
 
-        //public async Task HandleRequest(IRepository<Category, int> cR)
         public async Task HandleRequest(CategoryRepository cR)
         {
             _cR = cR;

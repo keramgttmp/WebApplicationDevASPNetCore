@@ -1,5 +1,5 @@
-﻿@model IEnumerable<Northwind.Store.Model.Product>
-
+﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.ProductIndexViewModel
+@using Microsoft.AspNetCore.Http.Extensions
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,71 +13,81 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProductName)
+                @*@Html.DisplayNameFor(model => model.Items.ProductName)*@
+                ProductName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QuantityPerUnit)
+                @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
+                QuantityPerUnit
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
+                @*@Html.DisplayNameFor(model => model.UnitPrice)*@
+                UnitPrice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UnitsInStock)
+                @*@Html.DisplayNameFor(model => model.UnitsInStock)*@
+                UnitsInStock
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UnitsOnOrder)
+                @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@
+                UnitsOnOrder
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReorderLevel)
+                @*@Html.DisplayNameFor(model => model.ReorderLevel)*@
+                ReorderLevel
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Discontinued)
+                @*@Html.DisplayNameFor(model => model.Discontinued)*@
+                Discontinued
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @*@Html.DisplayNameFor(model => model.Category)*@
+                Category
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Supplier)
+                @*@Html.DisplayNameFor(model => model.Supplier)*@
+                Supplier
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitsInStock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitsOnOrder)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReorderLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discontinued)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReorderLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discontinued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

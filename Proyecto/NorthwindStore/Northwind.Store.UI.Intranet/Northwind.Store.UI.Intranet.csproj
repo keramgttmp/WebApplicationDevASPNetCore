@@ -8,12 +8,15 @@
 
   <ItemGroup>
     <None Remove="Areas\Admin\Controllers\CustomerController - Copy.cs_bk" />
+    <None Remove="Areas\Admin\Controllers\EmployeeController - Copy.cs_bk" />
     <None Remove="Areas\Admin\Controllers\ProductController - copia.cs_bk" />
+    <None Remove="Areas\Admin\ViewModels\EmployeeIndexViewModel.cs~RF392cb669.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Areas\Admin\Controllers\CustomerController - Copy.cs_bk" />
-    <Compile Include="Areas\Admin\Controllers\ProductController - copia.cs_bk" />
+    <Compile Include="Areas\Admin\Controllers\Controller_backup\CustomerController - Copy.cs_bk" />
+    <Compile Include="Areas\Admin\Controllers\Controller_backup\ProductController - copia.cs_bk" />
+    <Compile Include="Areas\Admin\Controllers\Controller_backup\EmployeeController - Copy.cs_bk" />
   </ItemGroup>
 
   <ItemGroup>

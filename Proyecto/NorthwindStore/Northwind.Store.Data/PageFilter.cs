@@ -59,7 +59,7 @@ namespace Northwind.Store.Data
         public PageFilter()
         {
             Page = 1;
-            PageSize = 10;
+            PageSize = 5;
             Sort = "";
             SortDir = "ASC";
         }

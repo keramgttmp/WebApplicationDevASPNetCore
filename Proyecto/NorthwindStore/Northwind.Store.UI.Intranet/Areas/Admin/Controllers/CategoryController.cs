@@ -19,17 +19,14 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         private readonly Notifications ns = new Notifications();
 
         private readonly NWContext _context;
-        private readonly IRepository<Category, int> _cR;
-        private readonly CategoryRepository _cR2;
-        private readonly CategoryD _cD;
+        private readonly IRepository<Category, int> _cIR;
+        private readonly CategoryRepository _cR;
 
-        public CategoryController(NWContext context, IRepository<Category, int> cR, CategoryRepository cR2, CategoryD cD)
+        public CategoryController(NWContext context, IRepository<Category, int> cIR, CategoryRepository cR)
         {
             _context = context;
+            _cIR = cIR;
             _cR = cR;
-            _cR2 = cR2;
-
-            _cD = cD;
         }
 
         //public IActionResult Index0()
@@ -42,7 +39,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         //public IActionResult Index(ViewModels.CategoryIndexViewModel vm)
         public async Task<IActionResult> Index(ViewModels.CategoryIndexViewModel vm)
         {
-            await vm.HandleRequest(_cR2);
+            await vm.HandleRequest(_cR);
 
             return View(vm);
 
@@ -63,7 +60,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             //var category = await _context.Categories
             //    .FirstOrDefaultAsync(m => m.CategoryId == id);
             var category = await _cR.Get(id.Value);
-            var category2 = _cD.Read(id.Value);///Ojo revisar
 
             if (category == null)
             {

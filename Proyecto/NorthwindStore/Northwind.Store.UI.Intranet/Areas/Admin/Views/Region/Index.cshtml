@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Northwind.Store.Model.Region>
+﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.RegionIndexViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -13,14 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RegionDescription)
+                Id.
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.RegionDescription)*@
+                RegionDescription
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.Items)
+        {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RegionDescription)
             </td>
@@ -30,6 +38,6 @@
                 <a asp-action="Delete" asp-route-id="@item.RegionId">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
