@@ -2,29 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
+using Northwind.Store.Notification;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class TerritoryController : Controller
     {
-        private readonly NWContext _context;
+        private readonly Notifications ns = new Notifications();
 
-        public TerritoryController(NWContext context)
+        private readonly NWContext _context;
+        private readonly IRepository<Territory, int> _tIR;
+        private readonly TerritoryRepository _tR;
+
+        public TerritoryController(NWContext context, IRepository<Territory, int> tIR, TerritoryRepository tR)
         {
             _context = context;
+            _tIR = tIR;
+            _tR = tR;
         }
 
         // GET: Admin/Territory
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index( ViewModels.TerritoryIndexViewModel vm)
         {
-            var nWContext = _context.Territories.Include(t => t.Region);
-            return View(await nWContext.ToListAsync());
+            //var nWContext = _context.Territories.Include(t => t.Region);
+            //return View(await nWContext.ToListAsync());
+
+            await vm.HandleRequest(_tR);
+
+            return View(vm);
         }
 
         // GET: Admin/Territory/Details/5
@@ -35,9 +48,11 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var territory = await _context.Territories
-                .Include(t => t.Region)
-                .FirstOrDefaultAsync(m => m.TerritoryId == id);
+            //var territory = await _context.Territories
+            //    .Include(t => t.Region)
+            //    .FirstOrDefaultAsync(m => m.TerritoryId == id);
+            var territory= await _tR.Get(id);
+
             if (territory == null)
             {
                 return NotFound();
@@ -62,8 +77,19 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(territory);
-                await _context.SaveChangesAsync();
+                //_context.Add(territory);
+                //await _context.SaveChangesAsync();
+                territory.State = Model.ModelState.Added;
+                await _tR.Save(territory, ns);
+
+                if (ns.Any())
+                {
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+
+                    return View(territory);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["RegionId"] = new SelectList(_context.Region, "RegionId", "RegionDescription", territory.RegionId);
@@ -78,7 +104,8 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var territory = await _context.Territories.FindAsync(id);
+            //var territory = await _context.Territories.FindAsync(id);
+            var territory = await _tR.Get(id);
             if (territory == null)
             {
                 return NotFound();
@@ -101,21 +128,30 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                //try
+                //{
+                //    _context.Update(territory);
+                //    await _context.SaveChangesAsync();
+                //}
+                //catch (DbUpdateConcurrencyException)
+                //{
+                //    if (!TerritoryExists(territory.TerritoryId))
+                //    {
+                //        return NotFound();
+                //    }
+                //    else
+                //    {
+                //        throw;
+                //    }
+                //}
+                territory.State = Model.ModelState.Modified;
+                await _tR.Save(territory, ns);
+
+                if (ns.Any())
                 {
-                    _context.Update(territory);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TerritoryExists(territory.TerritoryId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+                    return View(territory);
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -147,15 +183,16 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var territory = await _context.Territories.FindAsync(id);
-            _context.Territories.Remove(territory);
-            await _context.SaveChangesAsync();
+            //var territory = await _context.Territories.FindAsync(id);
+            //_context.Territories.Remove(territory);
+            //await _context.SaveChangesAsync();
+            await _tR.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool TerritoryExists(string id)
         {
-            return _context.Territories.Any(e => e.TerritoryId == id);
+            return _tR.TerritoryExists(id);
         }
     }
 }

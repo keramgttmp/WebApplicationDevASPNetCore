@@ -57,7 +57,28 @@ namespace Northwind.Store.UI.Intranet
             services.AddTransient<IRepository<Product, int>, BaseRepository<Product, int>>();
             services.AddTransient<IRepository<Product, int>, ProductRepository>();
             services.AddTransient(typeof(ProductRepository));
+
+            //            
+            services.AddTransient<IRepository<Region, int>, BaseRepository<Region, int>>();
+            services.AddTransient<IRepository<Region, int>, RegionRepository>();
+            services.AddTransient(typeof(RegionRepository));
+
+            //            
+            services.AddTransient<IRepository<Shipper, int>, BaseRepository<Shipper, int>>();
+            services.AddTransient<IRepository<Shipper, int>, ShipperRepository>();
+            services.AddTransient(typeof(ShipperRepository));
+
+            //            
+            services.AddTransient<IRepository<Supplier, int>, BaseRepository<Supplier, int>>();
+            services.AddTransient<IRepository<Supplier, int>, SupplierRepository>();
+            services.AddTransient(typeof(SupplierRepository));
+
+            //            
+            services.AddTransient<IRepository<Territory, int>, BaseRepository<Territory, int>>();
+            services.AddTransient<IRepository<Territory, int>, TerritoryRepository>();
+            services.AddTransient(typeof(TerritoryRepository));
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

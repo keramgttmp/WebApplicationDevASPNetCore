@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Northwind.Store.Model.Territory>
+﻿@*@model IEnumerable<Northwind.Store.Model.Territory>*@
+@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.TerritoryIndexViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,33 +10,95 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TerritoryDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Region)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TerritoryDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Region.RegionDescription)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TerritoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TerritoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TerritoryId">Delete</a>
-            </td>
-        </tr>
+<form method="post" id="form1">
+    <div class="d-flex flex-column">
+        <div>
+            <input asp-for="Command" type="hidden" />
+            <input asp-for="Filter.TerritoryDescription" placeholder="Search here ..." />
+            <input asp-for="Paging.Page" type="hidden" />
+            <input asp-for="Paging.Sort" type="hidden" />
+            <input asp-for="Paging.SortDir" type="hidden" />
+            <button data-command="search">Search</button>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.TerritoryDescription)*@
+                            <button data-sort="TerritoryDescription" data-command="order">TerritoryDescription</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Region)*@
+                            <button data-sort="Region" data-command="order">Region</button>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TerritoryDescription)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Region.RegionDescription)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.TerritoryId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.TerritoryId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.TerritoryId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        @for (int i = 1; i <= Model.Paging.PageCount; i++)
+                        {
+            <td><button data-page="@i" data-command="paging">@i</button></td>
 }
-    </tbody>
-</table>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</form>
+
+@Model.Paging.Count
+
+<script>(function enableGrid(formId) {
+
+        let commands = document.querySelectorAll(`#${formId} button[data-command]`);
+        commands.forEach(c => {
+            c.addEventListener('click', function (event) {
+                //event.preventDefault();
+
+                let cm = this.dataset.command;
+
+                switch (cm) {
+                    case 'paging':
+                        const page = document.querySelector(`#${formId} input[name="Paging.Page"]`);
+                        page.value = this.dataset.page;
+                        break;
+                    case 'order':
+                        const sort = document.querySelector(`#${formId} input[name="Paging.Sort"]`);
+                        const sortDir = document.querySelector(`#${formId} input[name="Paging.SortDir"]`);
+
+                        if (sort.value !== this.dataset.sort) {
+                            sort.value = this.dataset.sort;
+                            sortDir.value = 'ASC';
+                        }
+                        else {
+                            sortDir.value = sortDir.value === 'ASC' ? 'DESC' : 'ASC';
+                        }
+                        break;
+                }
+
+                const command = document.querySelector(`#${formId} input[name="Command"]`);
+                command.value = cm;
+            });
+        });
+
+    })('form1');</script>

@@ -1,93 +1,150 @@
 ﻿@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.ProductIndexViewModel
 @using Microsoft.AspNetCore.Http.Extensions
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<form method="post" id="form1">
+    <div class="d-flex flex-column">
+        <div>
+            <input asp-for="Command" type="hidden" />
+            <input asp-for="Filter.ProductName" placeholder="Search here ..." />
+            <input asp-for="Paging.Page" type="hidden" />
+            <input asp-for="Paging.Sort" type="hidden" />
+            <input asp-for="Paging.SortDir" type="hidden" />
+            <button data-command="search">Search</button>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Items.ProductName)*@
+                            <button data-sort="ProductName" data-command="order">ProductName</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
+                            QuantityPerUnit
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.UnitPrice)*@
+                            UnitPrice
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.UnitsInStock)*@
+                            UnitsInStock
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@
+                            UnitsOnOrder
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.ReorderLevel)*@
+                            ReorderLevel
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Discontinued)*@
+                            Discontinued
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Category)*@
+                            Category
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Supplier)*@
+                            Supplier
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
         <tr>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Items.ProductName)*@
-                ProductName
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
-                QuantityPerUnit
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.UnitPrice)*@
-                UnitPrice
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.UnitsInStock)*@
-                UnitsInStock
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@
-                UnitsOnOrder
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.ReorderLevel)*@
-                ReorderLevel
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Discontinued)*@
-                Discontinued
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Category)*@
-                Category
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Supplier)*@
-                Supplier
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReorderLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discontinued)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Items)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitsInStock)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReorderLevel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Discontinued)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        @for (int i = 1; i <= Model.Paging.PageCount; i++)
+                        {
+            <td><button data-page="@i" data-command="paging">@i</button></td>
+}
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</form>
+
+@Model.Paging.Count
+
+<script>(function enableGrid(formId) {
+
+        let commands = document.querySelectorAll(`#${formId} button[data-command]`);
+        commands.forEach(c => {
+            c.addEventListener('click', function (event) {
+                //event.preventDefault();
+
+                let cm = this.dataset.command;
+
+                switch (cm) {
+                    case 'paging':
+                        const page = document.querySelector(`#${formId} input[name="Paging.Page"]`);
+                        page.value = this.dataset.page;
+                        break;
+                    case 'order':
+                        const sort = document.querySelector(`#${formId} input[name="Paging.Sort"]`);
+                        const sortDir = document.querySelector(`#${formId} input[name="Paging.SortDir"]`);
+
+                        if (sort.value !== this.dataset.sort) {
+                            sort.value = this.dataset.sort;
+                            sortDir.value = 'ASC';
+                        }
+                        else {
+                            sortDir.value = sortDir.value === 'ASC' ? 'DESC' : 'ASC';
+                        }
+                        break;
+                }
+
+                const command = document.querySelector(`#${formId} input[name="Command"]`);
+                command.value = cm;
+            });
+        });
+
+    })('form1');</script>

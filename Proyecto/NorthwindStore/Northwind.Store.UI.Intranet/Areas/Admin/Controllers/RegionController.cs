@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Northwind.Store.Notification;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class RegionController : Controller
     {
@@ -42,8 +44,10 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var region = await _context.Region
-                .FirstOrDefaultAsync(m => m.RegionId == id);
+            //var region = await _context.Region
+            //    .FirstOrDefaultAsync(m => m.RegionId == id);
+            var region = await _rR.Get(id.Value);
+
             if (region == null)
             {
                 return NotFound();
@@ -67,8 +71,19 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(region);
-                await _context.SaveChangesAsync();
+                //_context.Add(region);
+                //await _context.SaveChangesAsync();
+                region.State = Model.ModelState.Added;
+                await _rR.Save(region, ns);
+
+                if (ns.Any())
+                {
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+
+                    return View(region);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(region);
@@ -82,7 +97,8 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var region = await _context.Region.FindAsync(id);
+            //var region = await _context.Region.FindAsync(id);
+            var region = await _rR.Get(id.Value);
             if (region == null)
             {
                 return NotFound();
@@ -104,21 +120,30 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                //try
+                //{
+                //    _context.Update(region);
+                //    await _context.SaveChangesAsync();
+                //}
+                //catch (DbUpdateConcurrencyException)
+                //{
+                //    if (!RegionExists(region.RegionId))
+                //    {
+                //        return NotFound();
+                //    }
+                //    else
+                //    {
+                //        throw;
+                //    }
+                //}
+                region.State = Model.ModelState.Modified;
+                await _rR.Save(region, ns);
+
+                if (ns.Any())
                 {
-                    _context.Update(region);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RegionExists(region.RegionId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+                    return View(region);
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -148,15 +173,18 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var region = await _context.Region.FindAsync(id);
-            _context.Region.Remove(region);
-            await _context.SaveChangesAsync();
+            //var region = await _context.Region.FindAsync(id);
+            //_context.Region.Remove(region);
+            //await _context.SaveChangesAsync();
+            
+            await _rR.Delete(id);
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool RegionExists(int id)
         {
-            return _context.Region.Any(e => e.RegionId == id);
+            return _rR.RegionExists(id);
         }
     }
 }

@@ -20,10 +20,10 @@ estructurados en cada proyecto de la solución NorthwindStore.
 	Customers, Listo! REvisar
 	Employees, Listo!
 	Products, Listo!
-	Region, Voy por el controller de index.
-	Shippers, 
-	Suppliers, 
-	Territories, 
+	Region, Listo!
+	Shippers, Listo
+	Suppliers, Listo
+	Territories, Listo
 	Orders.
 	
 	Agregar a la acción de Details del controlador de Orders, que se muestre
@@ -31,7 +31,7 @@ estructurados en cada proyecto de la solución NorthwindStore.
 
 	* Opcional 1: Agregar que los listados obtenidos en la acción de Index de los controladores 
 	agregados, permitan: paginación, y ordenamiento por una columna (el usuario puede
-	ordenar por una columna a la vez).
+	ordenar por una columna a la vez). Listo
 
 	* Opcional 2: Que el listado obtenido en "Opcional 1" funcione de
 	forma asincrónica (Partial Rendering) haciendo uso de una técnica AJAX.

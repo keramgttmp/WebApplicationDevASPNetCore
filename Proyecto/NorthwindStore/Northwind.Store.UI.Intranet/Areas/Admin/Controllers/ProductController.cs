@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,6 +14,7 @@ using Northwind.Store.Notification;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class ProductController : Controller
     {
