@@ -1,7 +1,138 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@*@model IEnumerable<Northwind.Store.Model.Order>*@
+@model Northwind.Store.UI.Intranet.Areas.Admin.ViewModels.OrderIndexViewModel
+
 @{
+    ViewData["Title"] = "Index";
 }
 
-<h1>Index del Área del Admin</h1>
+<h1>Vista Index de Admin: Consulta de Órdenes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form method="post" id="form1">
+    <div class="d-flex flex-column">
+        <div>
+            <input asp-for="Command" type="hidden" />
+            <input asp-for="Filter.Customer.ContactName" placeholder="Search here by Contact Name..." />
+            <input asp-for="Paging.Page" type="hidden" />
+            <input asp-for="Paging.Sort" type="hidden" />
+            <input asp-for="Paging.SortDir" type="hidden" />
+            <button data-command="search">Search</button>
+        </div>
+        <hr/>
+        <div>
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Customer)*@
+                            <button class="btn btn-link" data-sort="Customer.ContactName" data-command="order">Customer</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.OrderDate)*@
+                            <button data-sort="OrderDate" data-command="order">OrderDate</button>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.ShipCity)*@
+                            ShipCity
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.ShipCountry)*@
+                            ShipCountry
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer.ContactName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShipCity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShipCountry)
+                            </td>
+                            <td>
+                                Total
+                            </td>
+                            <td>
+                                <a asp-controller="Order" asp-action="Details" asp-route-id="@item.OrderId">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        @if (Model.Paging.PageCount > Model.Paging.PageSize)
+        {
+            int previous = Model.Paging.Page - 1;
+            int next = Model.Paging.Page + 1;
+        <button class="btn btn-light" data-page="1" data-command="paging">Primero</button>
+
+        @if (previous > 0)
+        {<button class="btn btn-light" data-page="@previous" data-command="paging">Anterior</button>}
+        else
+        { <button class="btn btn-light" data-page="@previous" data-command="paging" disabled>Anterior</button>}
+
+         <span>Pág. @Model.Paging.Page / de @Model.Paging.PageCount<strong>Total Items: @Model.Paging.Count</strong></span>
+        @if (next <= Model.Paging.PageCount)
+        {
+            <button class="btn btn-light" data-page="@next" data-command="paging">Siguiente</button>}
+        else { <button class="btn btn-light" data-page="@next" data-command="paging" disabled>Siguiente</button>}
+
+        @if (next <= Model.Paging.PageCount)
+        {
+            <button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging">Último</button>}
+        else
+        {<button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging" disabled>Último</button> }
+        }
+    </div>
+</form>
+
+<script>(function enableGrid(formId) {
+
+        let commands = document.querySelectorAll(`#${formId} button[data-command]`);
+        commands.forEach(c => {
+            c.addEventListener('click', function (event) {
+                //event.preventDefault();
+
+                let cm = this.dataset.command;
+
+                switch (cm) {
+                    case 'paging':
+                        const page = document.querySelector(`#${formId} input[name="Paging.Page"]`);
+                        page.value = this.dataset.page;
+                        break;
+                    case 'order':
+                        const sort = document.querySelector(`#${formId} input[name="Paging.Sort"]`);
+                        const sortDir = document.querySelector(`#${formId} input[name="Paging.SortDir"]`);
+
+                        if (sort.value !== this.dataset.sort) {
+                            sort.value = this.dataset.sort;
+                            sortDir.value = 'DESC';
+                        }
+                        else {
+                            sortDir.value = sortDir.value === 'ASC' ? 'DESC' : 'ASC';
+                        }
+                        break;
+                }
+
+                const command = document.querySelector(`#${formId} input[name="Command"]`);
+                command.value = cm;
+            });
+        });
+
+    })('form1');</script>

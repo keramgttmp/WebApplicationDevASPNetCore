@@ -77,6 +77,11 @@ namespace Northwind.Store.UI.Intranet
             services.AddTransient<IRepository<Territory, int>, BaseRepository<Territory, int>>();
             services.AddTransient<IRepository<Territory, int>, TerritoryRepository>();
             services.AddTransient(typeof(TerritoryRepository));
+
+            //            
+            services.AddTransient<IRepository<Order, int>, BaseRepository<Order, int>>();
+            services.AddTransient<IRepository<Order, int>, OrderRepository>();
+            services.AddTransient(typeof(OrderRepository));
         }
 
 

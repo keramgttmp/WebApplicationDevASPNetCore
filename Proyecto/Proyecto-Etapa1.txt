@@ -24,7 +24,7 @@ estructurados en cada proyecto de la solución NorthwindStore.
 	Shippers, Listo
 	Suppliers, Listo
 	Territories, Listo
-	Orders.
+	Orders. LISTO
 	
 	Agregar a la acción de Details del controlador de Orders, que se muestre
 	el detalle de los productos de la orden y el monto total de la misma.
@@ -36,7 +36,7 @@ estructurados en cada proyecto de la solución NorthwindStore.
 	* Opcional 2: Que el listado obtenido en "Opcional 1" funcione de
 	forma asincrónica (Partial Rendering) haciendo uso de una técnica AJAX.
 	
-2. Modificar el controlador de Product en el Área de Admin. 10 puntos.
+2. Modificar el controlador de Product en el Área de Admin. 10 puntos. PENDIENTE
 
 	Agregar a la tabla de Products un campo para guardar una imagen.
 	
@@ -60,9 +60,9 @@ base de datos de Northwind, se deben mostrar los siguientes campos:
 
 	- ContactName (viene de la tabla Customers)
 	- OrderDate
-    - ShipCity
-    - ShipCountry
-	- Total (debe ser la sumatoria del precio de todos sus artículos por su cantidad)
+    	- ShipCity
+    	- ShipCountry
+	- Total (debe ser la sumatoria del precio de todos sus artículos por su cantidad) PENDIENTE
 	- "Detail" proveer un enlace para ir al controlador Order y obtener el detalle
 	de la orden.
 	

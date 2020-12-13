@@ -2,29 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
+using Northwind.Store.Notification;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class OrderController : Controller
     {
-        private readonly NWContext _context;
+        private readonly Notifications ns = new Notifications();
 
-        public OrderController(NWContext context)
+        private readonly NWContext _context;
+        private readonly IRepository<Order, int> _oIR;
+        private readonly OrderRepository _oR;
+
+        public OrderController(NWContext context, IRepository<Order, int> oIR, OrderRepository oR)
         {
             _context = context;
+            _oIR = oIR;
+            _oR = oR;
         }
 
         // GET: Admin/Order
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ViewModels.OrderIndexViewModel vm)
         {
-            var nWContext = _context.Orders.Include(o => o.Customer).Include(o => o.Employee).Include(o => o.ShipViaNavigation);
-            return View(await nWContext.ToListAsync());
+            //var nWContext = _context.Orders.Include(o => o.Customer).Include(o => o.Employee).Include(o => o.ShipViaNavigation);
+            //return View(await nWContext.ToListAsync());
+            await vm.HandleRequest(_oR);
+            return View(vm);
+
         }
 
         // GET: Admin/Order/Details/5
@@ -35,15 +47,20 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .Include(o => o.Customer)
-                .Include(o => o.Employee)
-                .Include(o => o.ShipViaNavigation)
-                .FirstOrDefaultAsync(m => m.OrderId == id);
+            //var order = await _context.Orders
+            //    .Include(o => o.Customer)
+            //    .Include(o => o.Employee)
+            //    .Include(o => o.ShipViaNavigation)
+            //    .FirstOrDefaultAsync(m => m.OrderId == id);
+
+            var order = await _oR.GetWithDetails(id.Value);
+            ViewData["TotalOrden"]= order.OrderDetails.Sum(p => p.UnitPrice);
             if (order == null)
             {
                 return NotFound();
             }
+
+            
 
             return View(order);
         }
@@ -66,8 +83,18 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
+                //_context.Add(order);
+                //await _context.SaveChangesAsync();
+                order.State = Model.ModelState.Added;
+                await _oR.Save(order, ns);
+
+                if (ns.Any())
+                {
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+
+                    return View(order);
+                }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", order.CustomerId);
@@ -84,7 +111,8 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders.FindAsync(id);
+            //var order = await _context.Orders.FindAsync(id);
+            var order = await _oR.Get(id.Value);
             if (order == null)
             {
                 return NotFound();
@@ -109,21 +137,30 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                //try
+                //{
+                //    _context.Update(order);
+                //    await _context.SaveChangesAsync();
+                //}
+                //catch (DbUpdateConcurrencyException)
+                //{
+                //    if (!OrderExists(order.OrderId))
+                //    {
+                //        return NotFound();
+                //    }
+                //    else
+                //    {
+                //        throw;
+                //    }
+                //}
+                order.State = Model.ModelState.Modified;
+                await _oR.Save(order, ns);
+
+                if (ns.Any())
                 {
-                    _context.Update(order);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OrderExists(order.OrderId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    var msg = ns[0];
+                    ModelState.AddModelError("", $"{msg.Title} - {msg.Description}");
+                    return View(order);
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -159,15 +196,16 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
-            _context.Orders.Remove(order);
-            await _context.SaveChangesAsync();
+            //var order = await _context.Orders.FindAsync(id);
+            //_context.Orders.Remove(order);
+            //await _context.SaveChangesAsync();
+            await _oR.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool OrderExists(int id)
         {
-            return _context.Orders.Any(e => e.OrderId == id);
+            return _oR.OrderExists(id);
         }
     }
 }
