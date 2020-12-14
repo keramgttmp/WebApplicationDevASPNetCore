@@ -227,18 +227,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         {
             FileStreamResult result = null;
 
-            //var image = await _context.Categories.Where(c => c.CategoryId == id).Select(i => i.Picture).AsNoTracking().FirstOrDefaultAsync();
-
-            //if (image != null)
-            //{
-            //    var stream = new MemoryStream(image);
-
-            //    if (stream != null)
-            //    {
-            //        result = File(stream, "image/jpg");
-            //    }
-            //}
-
             var file = await ((CategoryRepository)_cR).GetFileStream(id);
             if (file != null)
             {

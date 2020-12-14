@@ -129,7 +129,8 @@ namespace Northwind.Store.Data
 
         #region Concurrencia
         /// <summary>
-        /// Administración de la excepción de concurrencia al momento de la actualización de datos. Construye una notificación cuando se incluye el parámetro NotificationMessage.
+        /// Administración de la excepción de concurrencia al momento de la actualización de datos.
+        /// Construye una notificación cuando se incluye el parámetro NotificationMessage.
         /// </summary>
         /// <param name="dbe"></param>
         /// <param name="nm">Si el incluye la instancia se agrega los datos relacionados con la excepción.</param>
@@ -142,6 +143,8 @@ namespace Northwind.Store.Data
             }
             else
             {
+                //KK
+           
                 if (dbe != null)
                 {
                     var entry = dbe.Entries[0];

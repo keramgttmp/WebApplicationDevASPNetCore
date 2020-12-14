@@ -22,8 +22,8 @@
             <button data-command="search">Search</button>
         </div>
         <div>
-            <table class="table">
-                <thead>
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
                     <tr>
                         <th>
                             @*@Html.DisplayNameFor(model => model.CompanyName)*@
@@ -54,16 +54,34 @@
                         </tr>
                     }
                 </tbody>
-                <tfoot>
-                    <tr>
-                        @for (int i = 1; i <= Model.Paging.PageCount; i++)
-                        {
-            <td><button data-page="@i" data-command="paging">@i</button></td>
-}
-                    </tr>
-                </tfoot>
             </table>
         </div>
+    </div>
+    <div>
+        @if (Model.Paging.PageCount > Model.Paging.PageSize)
+        {
+            int previous = Model.Paging.Page - 1;
+            int next = Model.Paging.Page + 1;
+            <button class="btn btn-light" data-page="1" data-command="paging">Primero</button>
+
+            @if (previous > 0)
+            {<button class="btn btn-light" data-page="@previous" data-command="paging">Anterior</button>}
+            else
+            { <button class="btn btn-light" data-page="@previous" data-command="paging" disabled>Anterior</button>}
+
+            <span>Pág. @Model.Paging.Page / de @Model.Paging.PageCount<strong>Total Items: @Model.Paging.Count</strong></span>
+            @if (next <= Model.Paging.PageCount)
+            {
+                <button class="btn btn-light" data-page="@next" data-command="paging">Siguiente</button>}
+            else
+            { <button class="btn btn-light" data-page="@next" data-command="paging" disabled>Siguiente</button>}
+
+            @if (next <= Model.Paging.PageCount)
+            {
+                <button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging">Último</button>}
+            else
+            {<button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging" disabled>Último</button>}
+        }
     </div>
 </form>
 

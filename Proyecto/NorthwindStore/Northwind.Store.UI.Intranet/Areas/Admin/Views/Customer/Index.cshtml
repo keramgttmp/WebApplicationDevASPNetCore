@@ -11,41 +11,51 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-striped">
-    <thead>
-        @*<tr>
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CompanyName)
+                 @*   @Html.DisplayNameFor(model => model.CompanyName)*@
+                    CompanyName
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ContactName)
+                   @* @Html.DisplayNameFor(model => model.ContactName)*@
+                    ContactName
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ContactTitle)
+                    @*@Html.DisplayNameFor(model => model.ContactTitle)*@
+                    ContactTitle
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Address)
+                    @*@Html.DisplayNameFor(model => model.Address)*@
+                    Address
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.City)
+                    @*@Html.DisplayNameFor(model => model.City)*@
+                    City
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Region)
+                    @*@Html.DisplayNameFor(model => model.Region)*@
+                    Region
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PostalCode)
+                    @*@Html.DisplayNameFor(model => model.PostalCode)*@
+                    PostalCode
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Country)
+                    @*@Html.DisplayNameFor(model => model.Country)*@
+                    Country
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Phone)
+                    @*@Html.DisplayNameFor(model => model.Phone)*@
+                    Phone
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Fax)
+                    @*@Html.DisplayNameFor(model => model.Fax)*@
+                    Fax
                 </th>
                 <th></th>
-            </tr>*@
+            </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Customers)
@@ -92,31 +102,32 @@
     <tfoot>
         @if (Model.TotalCount > Model.PageSize)
         {
-        <tr>
-            @{ int previous = Model.Page - 1;
-                int next = Model.Page + 1; }
-            <td>
-                <a href="@Url.Action("Index")?page=1" title="Primero">|&lt;</a>
-            </td>
-            <td>
-                @if (previous > 0)
-                {
-                    <a href="@Url.Action("Index")?page=@previous" title="Anterior">&lt;</a>}
-            </td>
-            <td>
-                @Model.Page / @Model.PageCount  <strong>Total Items: @Model.TotalCount</strong>
-            </td>
-            <td>
-                @if (next <= Model.PageCount)
-                {
-                    <a href="@Url.Action("Index")?page=@next" title="Siguiente">&gt;</a>}
-            </td>
-            <td>
-                @if (next <= Model.PageCount)
-                {
-                    <a href="@Url.Action("Index")?page=@Model.PageCount" title="Último">&gt;|</a>}
-            </td>
-        </tr>
-       }
+            <tr>
+                @{ int previous = Model.Page - 1;
+                    int next = Model.Page + 1; }
+                <td>
+                    <a href="@Url.Action("Index")?page=1" title="Primero">|&lt;</a>
+                </td>
+                <td>
+                    @if (previous > 0)
+                    {
+                        <a href="@Url.Action("Index")?page=@previous" title="Anterior">&lt;</a>}
+                </td>
+                <td>
+                    @Model.Page / @Model.PageCount  <strong>Total Items: @Model.TotalCount</strong>
+                </td>
+                <td>
+                    @if (next <= Model.PageCount)
+                    {
+                        <a href="@Url.Action("Index")?page=@next" title="Siguiente">&gt;</a>}
+                </td>
+                <td>
+                    @if (next <= Model.PageCount)
+                    {
+                        <a href="@Url.Action("Index")?page=@Model.PageCount" title="Último">&gt;|</a>}
+                </td>
+            </tr>
+        }
     </tfoot>
 </table>
+

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -11,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Northwind.Store.Data;
 using Northwind.Store.Model;
 using Northwind.Store.Notification;
+using Northwind.Store.UI.Intranet.Areas.Admin.ViewModels;
 
 namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 {
@@ -49,13 +48,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            //antes de incluir trabajo con Repository
-            //var product = await _context.Products
-            //    .Include(p => p.Category)
-            //    .Include(p => p.Supplier)
-            //    .FirstOrDefaultAsync(m => m.ProductId == id);
-
-            var product = await _pIR.Get(id.Value);
+            var product = await _pR.Get(id.Value);
 
             if (product == null)
             {
@@ -79,7 +72,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued, Picture")] Product product, IFormFile picture)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] Product product, IFormFile picture)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +90,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 //await _context.SaveChangesAsync();
 
                 product.State = Model.ModelState.Added;
-                await _pIR.Save(product, ns);
+                await _pR.Save(product, ns);
 
                 if (ns.Any())
                 {
@@ -124,7 +117,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             }
 
             //var product = await _context.Products.FindAsync(id);
-            var product = await _pIR.Get(id.Value);
+            var product = await _pR.Get(id.Value);
 
             if (product == null)
             {
@@ -140,7 +133,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued, Picture")] Product product, IFormFile picture)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued,RowVersion")] Product product, IFormFile picture)
         {
             if (id != product.ProductId)
             {
@@ -177,7 +170,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                 }
 
                 product.State = Model.ModelState.Modified;
-                await _pIR.Save(product, ns);
+                await _pR.Save(product, ns);
 
                 if (ns.Any())
                 {
@@ -221,7 +214,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             //var product = await _context.Products.FindAsync(id);
             //_context.Products.Remove(product);
             //await _context.SaveChangesAsync();
-            await _pIR.Delete(id);
+            await _pR.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -229,6 +222,18 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         {
             //return _context.Products.Any(e => e.ProductId == id);
             return _pR.ProductExists(id);
+        }
+
+        public async Task<FileStreamResult> ReadImage(int id)
+        {
+            FileStreamResult result = null;
+            var file = await ((ProductRepository)_pR).GetFileStream(id);
+            if (file != null)
+            {
+                result = File(file, "image/jpg");
+            }
+
+            return result;
         }
     }
 }
