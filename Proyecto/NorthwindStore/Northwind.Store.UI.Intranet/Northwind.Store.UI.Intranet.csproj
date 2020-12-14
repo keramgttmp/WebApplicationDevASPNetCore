@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\ViewModels\OrderDetailViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Areas\Admin\Controllers\Controller_backup\OrderController - copia.cs_bk" />
     <None Remove="Areas\Admin\Controllers\CustomerController - Copy.cs_bk" />
     <None Remove="Areas\Admin\Controllers\EmployeeController - Copy.cs_bk" />

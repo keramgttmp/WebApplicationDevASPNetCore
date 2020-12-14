@@ -116,7 +116,7 @@
         </div>
     </div>
     <div>
-        @if (Model.Paging.PageCount > Model.Paging.PageSize)
+        @if (Model.Paging.Count > Model.Paging.PageSize)
         {
             int previous = Model.Paging.Page - 1;
             int next = Model.Paging.Page + 1;

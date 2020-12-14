@@ -19,13 +19,13 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         private readonly Notifications ns = new Notifications();
 
         private readonly NWContext _context;
-        private readonly IRepository<Category, int> _cIR;
+        //private readonly IRepository<Category, int> _cIR;
         private readonly CategoryRepository _cR;
 
-        public CategoryController(NWContext context, IRepository<Category, int> cIR, CategoryRepository cR)
+        public CategoryController(NWContext context,  CategoryRepository cR)
         {
             _context = context;
-            _cIR = cIR;
+            //_cIR = cIR;
             _cR = cR;
         }
 
@@ -42,10 +42,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             await vm.HandleRequest(_cR);
 
             return View(vm);
-
-            //vm.Items = await _cR.GetList();
-            // return View(await _cR.GetList(pf));
-            //return View(await _context.Categories.ToListAsync());
         }
 
         // GET: Admin/Category/Details/5
@@ -143,23 +139,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                //try
-                //{
-                //    _context.Update(category);
-                //    await _context.SaveChangesAsync();
-                //}
-                //catch (DbUpdateConcurrencyException)
-                //{
-                //    if (!CategoryExists(category.CategoryId))
-                //    {
-                //        return NotFound();
-                //    }
-                //    else
-                //    {
-                //        throw;
-                //    }
-                //}
-
                 if (picture != null)
                 {
                     using (MemoryStream ms = new MemoryStream())

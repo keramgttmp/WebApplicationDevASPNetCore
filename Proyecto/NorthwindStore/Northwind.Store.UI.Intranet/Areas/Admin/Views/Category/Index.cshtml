@@ -18,7 +18,6 @@
             <input asp-for="Paging.SortDir" type="hidden" />
             <button data-command="search">Search</button>
         </div>
-        <hr />
         <div>
             <table class="table table-striped table-hover">
                 <thead class="thead-dark">
@@ -31,51 +30,67 @@
                             @*@Html.DisplayNameFor(model => model.Description)*@
                             <button class="btn btn-link" data-sort="Description" data-command="order">Description</button>
                         </th>
-                        <th>
-                            @*@Html.DisplayNameFor(model => model.Picture)*@
-                            Picture
-                        </th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model.Items)
                     {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.Picture)*@
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-                </td>
-            </tr>
-}
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CategoryName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
-                <tfoot>
-                    <tr>
-                        @for (int i = 1; i <= Model.Paging.PageCount; i++)
-                        {
-            <td><button data-page="@i" data-command="paging">@i</button></td>
-}
-                    </tr>
-                </tfoot>
+                @*<tfoot>
+                            <tr>
+                                @for (int i = 1; i <= Model.Paging.PageCount; i++)
+                                {
+                    <td><button data-page="@i" data-command="paging">@i</button></td>}
+                            </tr>
+                        </tfoot>*@
             </table>
         </div>
     </div>
+
+    <div>
+        @if (Model.Paging.Count > Model.Paging.PageSize)
+        {
+            int previous = Model.Paging.Page - 1;
+            int next = Model.Paging.Page + 1;
+            <button class="btn btn-light" data-page="1" data-command="paging">Primero</button>
+            @if (previous > 0)
+            {<button class="btn btn-light" data-page="@previous" data-command="paging">Anterior</button>}
+            else
+            { <button class="btn btn-light" data-page="@previous" data-command="paging" disabled>Anterior</button>}
+
+            <span>Pág. @Model.Paging.Page / de @Model.Paging.PageCount<strong>Total Items: @Model.Paging.Count</strong></span>
+            @if (next <= Model.Paging.PageCount)
+            {
+                <button class="btn btn-light" data-page="@next" data-command="paging">Siguiente</button>}
+            else
+            { <button class="btn btn-light" data-page="@next" data-command="paging" disabled>Siguiente</button>}
+
+            @if (next <= Model.Paging.PageCount)
+            {
+                <button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging">Último</button>}
+            else
+            {<button class="btn btn-light" data-page="@Model.Paging.PageCount" data-command="paging" disabled>Último</button>}
+        }
+    </div>
 </form>
 
-@Model.Paging.Count
 
 <script>
-
     (function enableGrid(formId) {
 
         let commands = document.querySelectorAll(`#${formId} button[data-command]`);
@@ -109,6 +124,43 @@
             });
         });
 
-    })('form1');
+    })('form1');</script>
 
-</script>
+@*<script>
+
+        (function enableGrid(formId) {
+
+            let commands = document.querySelectorAll(`#${formId} button[data-command]`);
+            commands.forEach(c => {
+                c.addEventListener('click', function (event) {
+                    //event.preventDefault();
+
+                    let cm = this.dataset.command;
+
+                    switch (cm) {
+                        case 'paging':
+                            const page = document.querySelector(`#${formId} input[name="Paging.Page"]`);
+                            page.value = this.dataset.page;
+                            break;
+                        case 'order':
+                            const sort = document.querySelector(`#${formId} input[name="Paging.Sort"]`);
+                            const sortDir = document.querySelector(`#${formId} input[name="Paging.SortDir"]`);
+
+                            if (sort.value !== this.dataset.sort) {
+                                sort.value = this.dataset.sort;
+                                sortDir.value = 'ASC';
+                            }
+                            else {
+                                sortDir.value = sortDir.value === 'ASC' ? 'DESC' : 'ASC';
+                            }
+                            break;
+                    }
+
+                    const command = document.querySelector(`#${formId} input[name="Command"]`);
+                    command.value = cm;
+                });
+            });
+
+        })('form1');
+
+    </script>*@

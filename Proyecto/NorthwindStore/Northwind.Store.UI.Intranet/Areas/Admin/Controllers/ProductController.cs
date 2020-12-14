@@ -34,8 +34,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // GET: Admin/Product
         public async Task<IActionResult> Index( ViewModels.ProductIndexViewModel vm)
         {
-            //var nWContext = _context.Products.Include(p => p.Category).Include(p => p.Supplier);
-            //return View(await nWContext.ToListAsync());
             await vm.HandleRequest(_pR);
             return View(vm);
         }
@@ -72,7 +70,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] Product product, IFormFile picture)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued ")] Product product, IFormFile picture)
         {
             if (ModelState.IsValid)
             {
@@ -133,7 +131,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued,RowVersion")] Product product, IFormFile picture)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,SupplierId,CategoryId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued,ModifiedProperties,RowVersion")] Product product, IFormFile picture)
         {
             if (id != product.ProductId)
             {
@@ -142,28 +140,12 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                //try
-                //{
-                //    _context.Update(product);
-                //    await _context.SaveChangesAsync();
-                //}
-                //catch (DbUpdateConcurrencyException)
-                //{
-                //    if (!ProductExists(product.ProductId))
-                //    {
-                //        return NotFound();
-                //    }
-                //    else
-                //    {
-                //        throw;
-                //    }
-                //}
                 if (picture != null)
                 {
                     using (MemoryStream ms = new MemoryStream())
                     {
                         picture.CopyTo(ms);
-                        product.Picture= ms.ToArray();
+                        product.Picture = ms.ToArray();
                     }
 
                     product.ModifiedProperties.Add("Picture");
