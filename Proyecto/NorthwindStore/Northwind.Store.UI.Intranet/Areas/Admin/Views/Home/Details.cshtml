@@ -76,7 +76,7 @@
             @Html.DisplayNameFor(model => model.Customer)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Customer.CustomerId)
+            @Html.DisplayFor(model => model.Customer.ContactName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Employee)
@@ -108,16 +108,15 @@
             {
                 <tr>
                     <td>@item.Product</td>
-                    <td>@item.UnitPrice.ToString("N")</td>
-                    <td>@item.Quantity.ToString("N")</td>
-                    <td>@item.Discount.ToString("N")</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Discount</td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-<p> Total de la Orden : @ViewData["TotalOrden"]</p>
+<p> Total de la Orden : @ViewData["TotalOrden"] </p>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

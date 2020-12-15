@@ -50,24 +50,37 @@
                 <tbody>
                     @foreach (var item in Model.Items)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Customer.ContactName)
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Customer.ContactName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShipCity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShipCountry)
+                        </td>
+
+                        @if (item.OrderDetails.Count != 0)
+                        {
+                            decimal Total = 0;
+                            @foreach (var detail in item.OrderDetails)
+                            {
+                                Total = Total + (detail.UnitPrice * detail.Quantity);
+                            }
+                           <td>
+                               @Total.ToString("N")
                             </td>
+                        }
+                        else
+                        {
+                            <td>0.00</td>
+                            }
                             <td>
-                                @Html.DisplayFor(modelItem => item.OrderDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipCity)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipCountry)
-                            </td>
-                            <td>
-                                Total
-                            </td>
-                            <td>
-                                <a asp-controller="Order" asp-action="Details" asp-route-id="@item.OrderId">Details</a>
+                                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a>
                             </td>
                         </tr>
                     }

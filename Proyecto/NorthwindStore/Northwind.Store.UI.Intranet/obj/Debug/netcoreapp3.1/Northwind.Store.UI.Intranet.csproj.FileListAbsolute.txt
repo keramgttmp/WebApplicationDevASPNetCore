@@ -507,3 +507,4 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Intranet.genruntimeconfig.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Intranet\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Details.cshtml.g.cs

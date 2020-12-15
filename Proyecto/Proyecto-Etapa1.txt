@@ -27,7 +27,7 @@ estructurados en cada proyecto de la solución NorthwindStore.
 	Orders. LISTO
 	
 	Agregar a la acción de Details del controlador de Orders, que se muestre
-	el detalle de los productos de la orden y el monto total de la misma.
+	el detalle de los productos de la orden y el monto total de la misma. LISTO
 
 	* Opcional 1: Agregar que los listados obtenidos en la acción de Index de los controladores 
 	agregados, permitan: paginación, y ordenamiento por una columna (el usuario puede
@@ -36,24 +36,24 @@ estructurados en cada proyecto de la solución NorthwindStore.
 	* Opcional 2: Que el listado obtenido en "Opcional 1" funcione de
 	forma asincrónica (Partial Rendering) haciendo uso de una técnica AJAX.
 	
-2. Modificar el controlador de Product en el Área de Admin. 10 puntos. PENDIENTE
+2. Modificar el controlador de Product en el Área de Admin. 10 puntos. 
 
 	Agregar a la tabla de Products un campo para guardar una imagen.
 	
-	Modificar el controlador de Product para que permitira la 
+	Modificar el controlador de Product para que permitira la  LISTO
 	modificación de la imagen, así como mostrar la imagen al momento de 
 	eliminar el producto y que se obtiene el detalle de la misma.
 
-	- Agregar la gestión de imágen para Producto.
+	- Agregar la gestión de imágen para Producto.LISTO
 		- Poder asignarla al crear.
 		- Poder visualizar en el detalle y el detalle antes de eliminar.
 		- Poder cambiar al modificar.
 		
-	- Agregar anotaciones de validación al resto
+	- Agregar anotaciones de validación al resto PENDIENTE
 	de propiedades del Producto para que sean requeridas.
 
 3. Agregar un controlador Home en el Área de Admin, y cambiar la vista Index 
-del controlador Home en el Área de Admin. 10 puntos.
+del controlador Home en el Área de Admin. 10 puntos. LISTO
 
 Se debe modificar la vista para mostrar un listado de las Órdenes en la 
 base de datos de Northwind, se deben mostrar los siguientes campos:
@@ -64,15 +64,15 @@ base de datos de Northwind, se deben mostrar los siguientes campos:
     	- ShipCountry
 	- Total (debe ser la sumatoria del precio de todos sus artículos por su cantidad) PENDIENTE
 	- "Detail" proveer un enlace para ir al controlador Order y obtener el detalle
-	de la orden.
+	de la orden. LISTO
 	
 	El ordenamiento del listado se hace inicialmente por medio del campo OrderDate
-	y de forma descendente.
+	y de forma descendente. LISTO
 	
 	Se requiere autenticación para ingresar a todos los controladores y sus
-	acciones que existan dentro en el Área de Admin.
+	acciones que existan dentro en el Área de Admin. LISTO
 	
 	* Opcional 1: Permitir el ordenamiento y paginado del listado que se obtiene,
 	hacerlo de forma que el encabezado de cada columna en la lista de órdenes
 	sirva como un enlace y al hacer clic cambie el ordenamiento de Ascendente a Descendente
-	y que se actualice el listado.
+	y que se actualice el listado. LISTO

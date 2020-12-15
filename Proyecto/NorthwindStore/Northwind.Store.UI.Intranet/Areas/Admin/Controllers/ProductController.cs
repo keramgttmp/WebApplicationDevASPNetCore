@@ -20,13 +20,13 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
         private readonly Notifications ns = new Notifications();
 
         private readonly NWContext _context;
-        private readonly IRepository<Product, int> _pIR;
+        //private readonly IRepository<Product, int> _pIR;
         private readonly ProductRepository _pR;
 
-        public ProductController(NWContext context, IRepository<Product, int> pIR, ProductRepository pR)
+        public ProductController(NWContext context,/* IRepository<Product, int> pIR,*/ ProductRepository pR)
         {
             _context = context;
-            _pIR = pIR;
+            //_pIR = pIR;
             _pR = pR;
 
         }
@@ -82,11 +82,6 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
                         product.Picture = ms.ToArray();
                     }
                 }
-
-                //antes de Repository
-                //_context.Add(product);
-                //await _context.SaveChangesAsync();
-
                 product.State = Model.ModelState.Added;
                 await _pR.Save(product, ns);
 

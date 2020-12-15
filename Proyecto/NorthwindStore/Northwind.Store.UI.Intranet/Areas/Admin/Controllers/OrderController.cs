@@ -54,7 +54,7 @@ namespace Northwind.Store.UI.Intranet.Areas.Admin.Controllers
             //    .FirstOrDefaultAsync(m => m.OrderId == id);
 
             var order = await _oR.GetWithDetails(id.Value);
-            ViewData["TotalOrden"]= order.OrderDetails.Sum(p => p.UnitPrice);
+            ViewData["TotalOrden"]= order.OrderDetails.Sum(p => (p.UnitPrice * p.Quantity)).ToString("N");
             if (order == null)
             {
                 return NotFound();

@@ -23,7 +23,7 @@
                     <tr>
                         <th>
                             @*@Html.DisplayNameFor(model => model.Items.ProductName)*@
-                            <button data-sort="ProductName" data-command="order">ProductName</button>
+                            <button class="btn btn-link" data-sort="ProductName" data-command="order">ProductName</button>
                         </th>
                         <th>
                             @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
@@ -114,7 +114,7 @@
             else
             { <button class="btn btn-light" data-page="@previous" data-command="paging" disabled>Anterior</button>}
 
-            <span>Pág. @Model.Paging.Page / de @Model.Paging.PageCount<strong>Total Items: @Model.Paging.Count</strong></span>
+            <span>Pág. @Model.Paging.Page / de @Model.Paging.PageCount <strong>Total Items: @Model.Paging.Count</strong></span>
             @if (next <= Model.Paging.PageCount)
             {
                 <button class="btn btn-light" data-page="@next" data-command="paging">Siguiente</button>}

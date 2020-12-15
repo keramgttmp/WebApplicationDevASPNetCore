@@ -15,13 +15,15 @@ namespace Northwind.Store.Data
 
         public override async Task<Product> Get(int key)
         {
+            //var result = await base.Get(key);
+
+
             var result = await _db.Products
                 .Include(p => p.Category)
                 .Include(p => p.Supplier)
                 .FirstOrDefaultAsync(m => m.ProductId == key);//await base.Get(key);
 
             result.PictureBase64 = await GetFileBase64(key);
-
             return result;
         }
 

@@ -37,12 +37,12 @@ namespace Northwind.Store.Data
             else
             {
                 pf.Count = await _db.Orders.Include(o => o.Customer)
-                 .Include(o => o.Employee)
+                 .Include(o => o.OrderDetails)
                  .Include(o => o.ShipViaNavigation).CountAsync();
 
                 result = await _db.Orders
                 .Include(o => o.Customer)
-                .Include(o => o.Employee)
+                .Include(o => o.OrderDetails)
                 .Include(o => o.ShipViaNavigation)
                 .AsNoTracking().
                     OrderBy(pf.Sorting).
@@ -78,6 +78,7 @@ namespace Northwind.Store.Data
 
             pf.Count = await _db.Orders.Include(o => o.Customer)
                 .Include(o => o.Employee)
+                .Include(o => o.OrderDetails)
                 .Include(o => o.ShipViaNavigation)
                 .Where(c => string.IsNullOrEmpty(filter) || 
                             c.Customer.ContactName.Contains(filter)).CountAsync();
@@ -85,6 +86,7 @@ namespace Northwind.Store.Data
             result = await _db.Orders.AsNoTracking().
                 Include(o => o.Customer)
                 .Include(o => o.Employee)
+                .Include(o => o.OrderDetails)
                 .Include(o => o.ShipViaNavigation)
                 .Where(c => string.IsNullOrEmpty(filter) || c.Customer.ContactName.Contains(filter)).OrderBy(pf.Sorting).
                 Skip((pf.Page - 1) * pf.PageSize).
@@ -98,7 +100,7 @@ namespace Northwind.Store.Data
             return _db.Orders.Any(e => e.OrderId == id);
         }
 
-        public decimal OrderSubTotal(int id)
+        public decimal OrderTotal(int id)
         {
             var SubTotal = _db.OrderSubtotals.FirstOrDefaultAsync(m => m.OrderId == id);
             return (decimal)SubTotal.Result.Subtotal;
