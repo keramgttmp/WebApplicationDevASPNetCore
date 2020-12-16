@@ -19,15 +19,15 @@ table.bordes {
     border-collapse: collapse;
 }
 
-table.bordes thead {
-    border-bottom: 0.25em solid gray;
-}
+    table.bordes thead {
+        border-bottom: 0.25em solid gray;
+    }
 
-table.bordes tbody td {
-    border-bottom: 1px solid blue;
-    border-right: 1px dotted gray;
-}
+    table.bordes tbody td {
+        border-bottom: 1px solid blue;
+        border-right: 1px dotted gray;
+    }
 
 tbody tr:nth-child(odd) {
-    background-color: #e9bce1;
+    background-color: #a4eea5;
 }

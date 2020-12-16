@@ -281,6 +281,14 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.10, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "WebEssentials.AspNetCore.OutputCaching": {
+              "target": "Package",
+              "version": "[1.0.28, )"
             }
           },
           "imports": [

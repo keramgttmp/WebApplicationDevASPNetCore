@@ -6,19 +6,17 @@
       "library": "twitter-bootstrap@4.5.2",
       "destination": "wwwroot/lib/twitter-bootstrap/",
       "files": [
-        "css/bootstrap.min.css",
-        "css/bootstrap.css"
+        "css/bootstrap.css",
+        "css/bootstrap.min.css"
       ]
     },
     {
       "library": "underscore.js@1.11.0",
-      "destination": "wwwroot/lib/underscore.js/",
-      "files": [
-        "underscore-min.js",
-        "underscore-esm-min.js",
-        "underscore-esm.js",
-        "underscore.js"
-      ]
+      "destination": "wwwroot/lib/underscore.js/"
+    },
+    {
+      "library": "vue@2.6.12",
+      "destination": "wwwroot/lib/vue/"
     }
   ]
 }

@@ -2,18 +2,18 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h3>Listado de productos disponibles</h3>
+<h3>Listado de productos disponibles Ajax</h3>
 <form method="get">
-    <input asp-for="Filter" placeholder="Type filter here" />
-    <button type="submit">Buscar</button>
+    <input id="filter" asp-for="Filter" placeholder="Type filter here" />
+    <button id="bSearch" type="submit">Buscar</button>
 </form>
 
 @if (Model != null)
 {
-    <ul class="list-group">
+    <ul id="list" class="list-group">
         @foreach (var p in Model.Products)
         {
-            <li class="list-group-item">
+            <li  class="list-group-item">
                 <a asp-controller="Product" asp-action="Details" asp-route-id="@p.ProductId">@p.ProductName</a>
                 <p>Nombre @p.ProductName</p>
                 <p>Precio Unit. @p.UnitPrice</p>
@@ -23,3 +23,6 @@
     </ul>
 
 }
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/lib/underscore.js/underscore.js"></script>
+<script src="~/js/product.js"></script>

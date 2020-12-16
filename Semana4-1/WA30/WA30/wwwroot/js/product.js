@@ -1,29 +1,45 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     console.log('Document ready!');
 
-    const bSearch = document.getElementById('bSearch');
     const filter = document.getElementById('filter');
-
+    const bSearch = document.getElementById('bSearch');
     bSearch.addEventListener('click', (event) => {
         event.preventDefault();
 
         let ps = new ProductService();
 
+        document.getElementById('list').innerHTML = ``;
+
         ps.getProducts().then((data) => {
-            console.log(data);
-            //filtro con underscore
+            //console.log(data);
+
             let filtered = _.filter(data, function (p) {
-                return p.productName.toLowerCase().indexOf(filter.value.toLowerCase()) !== -1;
+                return p.productName.toLowerCase().
+                    indexOf(filter.value.toLowerCase()) !== -1;
             });
 
-            console.log(filtered);
+            //console.log(filtered);
+
+            var grouped = _.groupBy(filtered, "categoryID");
+            console.log(grouped);
+
+            for (var key in grouped) {
+                var items = grouped[key];
+
+                //console.log(grouped[key][0].category.categoryName);
+                appendCategory(grouped[key][0].category.categoryName);
+
+                items.forEach(function (item, index, array) {
+                    //console.log(item);
+
+                    appendProduct(item);
+                });
+            };
 
         }).catch((err) => {
             console.log(`Error: ${err}`);
         });
-
     });
-
 });
 
 function appendProduct(item) {

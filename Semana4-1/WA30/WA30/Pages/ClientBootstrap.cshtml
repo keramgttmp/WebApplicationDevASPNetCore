@@ -2,23 +2,29 @@
 @model WA30.Pages.ClientBootstrapModel
 @{
 }
+
 <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-<h2>Index</h2>
 
-<form method="post">
-    <input asp-for="Filter" placeholder="Type filter here" />
-    <button type="submit">Search</button>
-</form>
+<div class="container">
+    <h2>Index</h2>
 
-@if (Model.Products != null && Model.Products.Any())
-{
-    <div class="container">
+    <form method="post" class="form-inline">
+        <div class="form-group">
+            <label for="filter">Producto</label>
+            <input asp-for="Filter" placeholder="Type filter here" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    @if (Model.Products != null && Model.Products.Any())
+    {
+
         @foreach (var gp in Model.Products)
         {
             <section>
                 <h3>@gp.Key</h3>
 
-                <table class="table-dark">
+                <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -41,14 +47,15 @@
                     <tfoot>
                         <tr>
                             <td colspan="4">
-                                Cantidad de Productos:
-                                <span class="cantidad">@gp.Count()</span>
+                                <p>
+                                    Cantidad de Productos:
+                                    <span class="badge badge-primary">@gp.Count()</span>
+                                </p>
                             </td>
                         </tr>
                     </tfoot>
                 </table>
             </section>
         }
-
-    </div>
-}
+    }
+</div>

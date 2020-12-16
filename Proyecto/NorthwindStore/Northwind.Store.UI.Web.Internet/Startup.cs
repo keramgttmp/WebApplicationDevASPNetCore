@@ -47,6 +47,8 @@ namespace Northwind.Store.UI.Web.Internet
 
             //se agrega el servicio referido a la clase SessionSettings para el manejo de la sesión
             services.AddTransient(typeof(SessionSettings));
+
+            services.AddMemoryCache();
         }
 
 
@@ -78,6 +80,7 @@ namespace Northwind.Store.UI.Web.Internet
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

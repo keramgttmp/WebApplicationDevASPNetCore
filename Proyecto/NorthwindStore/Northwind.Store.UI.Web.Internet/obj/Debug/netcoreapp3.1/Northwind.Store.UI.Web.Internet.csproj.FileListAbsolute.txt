@@ -1,5 +1,6 @@
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\libman.json
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.exe
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.deps.json
@@ -361,9 +362,6 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.csprojAssemblyReference.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.AssemblyInfoInputs.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.AssemblyInfo.cs
-C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.csproj.CoreCompileInputs.cache
-C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.MvcApplicationPartsAssemblyInfo.cs
-C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.MvcApplicationPartsAssemblyInfo.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.RazorAssemblyInfo.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.RazorAssemblyInfo.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.TagHelpers.input.cache
@@ -371,6 +369,7 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.RazorCoreGenerate.cache
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index2.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Product\Details.cshtml.g.cs
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -387,3 +386,9 @@ C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.dll
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.pdb
 C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.genruntimeconfig.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\bin\Debug\netcoreapp3.1\WebEssentials.AspNetCore.OutputCaching.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.csproj.CoreCompileInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.MvcApplicationPartsAssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.UI.Web.Internet\obj\Debug\netcoreapp3.1\Northwind.Store.UI.Web.Internet.MvcApplicationPartsAssemblyInfo.cache

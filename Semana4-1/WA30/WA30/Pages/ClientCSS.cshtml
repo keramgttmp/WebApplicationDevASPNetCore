@@ -2,7 +2,8 @@
 @model WA30.Pages.ClientCSSModel
 @{
 }
-<!--<style>
+
+<style>
     body {
         margin: 2em 4em;
         font-family: 'Franklin Gothic Medium', sans-serif;
@@ -42,11 +43,10 @@
         margin: 1em 0;
     }
 </style>
-    -->
 
 <link href="~/css/table.css" rel="stylesheet" />
 
-<h2>Index</h2>
+<h2 id="titulo" style="font-family: 'Segoe UI'; font-size: 34px;">Index</h2>
 
 <form method="post">
     <input asp-for="Filter" placeholder="Type filter here" />
@@ -55,7 +55,7 @@
 
 @if (Model.Products != null && Model.Products.Any())
 {
-    <div>
+    <div id="contenido">
         @foreach (var gp in Model.Products)
         {
             <section>
