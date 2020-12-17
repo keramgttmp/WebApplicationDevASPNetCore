@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("48362417-9092-464f-bbff-9dcb8c4c63d3")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Northwind.Store.UI.Web.Internet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

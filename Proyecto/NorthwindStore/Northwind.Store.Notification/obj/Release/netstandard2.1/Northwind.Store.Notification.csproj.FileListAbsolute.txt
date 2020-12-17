@@ -1,0 +1,9 @@
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\bin\Release\netstandard2.1\Northwind.Store.Notification.deps.json
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\bin\Release\netstandard2.1\Northwind.Store.Notification.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\bin\Release\netstandard2.1\Northwind.Store.Notification.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.csprojAssemblyReference.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.AssemblyInfoInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.AssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.csproj.CoreCompileInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Notification\obj\Release\netstandard2.1\Northwind.Store.Notification.pdb

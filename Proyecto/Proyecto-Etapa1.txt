@@ -49,7 +49,7 @@ estructurados en cada proyecto de la solución NorthwindStore.
 		- Poder visualizar en el detalle y el detalle antes de eliminar.
 		- Poder cambiar al modificar.
 		
-	- Agregar anotaciones de validación al resto PENDIENTE
+	- Agregar anotaciones de validación al resto LISTO
 	de propiedades del Producto para que sean requeridas.
 
 3. Agregar un controlador Home en el Área de Admin, y cambiar la vista Index 

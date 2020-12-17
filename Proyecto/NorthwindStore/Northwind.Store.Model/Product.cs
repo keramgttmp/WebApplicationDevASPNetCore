@@ -15,7 +15,7 @@ namespace Northwind.Store.Model
         [Key]
         [Column("ProductID")]
         public int ProductId { get; set; }
-        [Required]
+        //[Required]
         [StringLength(40)]
         public string ProductName { get; set; }
         [Column("SupplierID")]

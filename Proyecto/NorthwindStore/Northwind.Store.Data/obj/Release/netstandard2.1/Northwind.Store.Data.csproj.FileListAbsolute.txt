@@ -1,0 +1,14 @@
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Data.deps.json
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Data.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Data.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Model.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Notification.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Model.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\bin\Release\netstandard2.1\Northwind.Store.Notification.pdb
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.csprojAssemblyReference.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.AssemblyInfoInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.AssemblyInfo.cs
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.csproj.CoreCompileInputs.cache
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.csproj.CopyComplete
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.dll
+C:\Cenfotec\WebApplicationDevASPNetCore\Proyecto\NorthwindStore\Northwind.Store.Data\obj\Release\netstandard2.1\Northwind.Store.Data.pdb

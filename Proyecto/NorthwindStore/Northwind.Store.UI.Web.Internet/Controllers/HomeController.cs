@@ -50,27 +50,30 @@ namespace Northwind.Store.UI.Web.Internet.Controllers
 
         public JsonResult json(string pfilter)
         {
-            MemoryCacheEntryOptions cacheExpirationOptions = new MemoryCacheEntryOptions();
-            cacheExpirationOptions.AbsoluteExpiration = DateTime.Now.AddMinutes(5);
-            cacheExpirationOptions.Priority = CacheItemPriority.Normal;
-
             var filter = HttpContext.Session.GetString("Filter");
 
             HttpContext.Session.SetString("Filter", pfilter ?? "");
 
             var result = new List<Product>();
 
-            result= _memoryCache.GetOrCreate("Product", cacheEntry => { 
-                    return _context.Products.Where(p => p.ProductName.ToUpper().Trim().Contains(pfilter)).ToList();
-                    }
-                    );
-            //result = _context.Products.Where(p => p.ProductName.ToUpper().Trim().Contains(pfilter)).ToList();
+            if (!_memoryCache.TryGetValue("Product", out result))
+            {
+                MemoryCacheEntryOptions cacheExpirationOptions = new MemoryCacheEntryOptions();
+                cacheExpirationOptions.AbsoluteExpiration = DateTime.Now.AddMinutes(1);
+                cacheExpirationOptions.Priority = CacheItemPriority.Normal;
 
-            //var vm = new ProductIndexViewModel() { Products = result };
+                //result = _memoryCache.GetOrCreate("Product", cacheEntry =>
+                //{
+                //    return _context.Products.Where(p => p.ProductName.ToUpper().Trim().Contains(pfilter)).ToList();
+                //},
+                //        );
 
-           // result = result.Where(p => p.ProductName.ToUpper().Trim().Contains(pfilter)).ToList();
+                result = _context.Products.Where(p => string.IsNullOrEmpty(pfilter) || p.ProductName.ToUpper().Trim().Contains(pfilter)).ToList();
 
-            return Json(result);//, JsonRequestBehavior.Allowed);
+                _memoryCache.Set("Product", result , cacheExpirationOptions);
+                 
+            }
+            return Json(result);
             //return View(_context.Products.ToList());
         }
 
